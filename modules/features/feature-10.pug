@@ -1,0 +1,22 @@
+include ../common/common
+include contents
+
+mixin feature-10()
+  +main-section({ id: 10, partial: 'features' }).bg-macbook-center.pt-60.pt-lg-100.text-center
+    h1.mb-60 Features
+
+    +row.mb-40
+      each item in featureItems10
+        +feature-10-item(item)
+
+    .bg-macbook-center
+
+
+//- PARTIALS
+mixin feature-10-item({ title, text })
+  +col(['12', 'sm-4']).mb-40
+    .mb-20
+      img(src="img/pics/check-36.svg" alt="")
+
+    h3.mb-10= title
+    p!= text

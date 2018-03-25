@@ -1,0 +1,15 @@
+include ../common/common
+
+mixin form-9()
+   +main-section({ id: 9, partial: 'forms' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-8', 'lg-5'])
+        img.mb-40(src="img/pics/star-54.svg", alt="")
+        h1.mb-15 Sign Up
+        h4.mb-40 A small river named Duden flows by their place and supplies it with the necessary regelialia
+
+        form
+          +input({ glyphicon: true, isLight: true })(type="text" placeholder="Input with icon").mb-20
+          +input({ isLight: true })(type="text" placeholder="Input with icon").mb-20
+          +button.w-full.no-padding
+

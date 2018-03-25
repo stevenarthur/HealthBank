@@ -1,0 +1,17 @@
+include ../common/common
+
+mixin content-12()
+  +main-section({ id: 12, partial: 'contents' }).text-center.p-60.p-lg-100
+    +row('center', 'center')
+      +col(['12', 'sm-10', 'lg-8'])
+        img.mb-40(src="img/logos/logo.svg" alt="")
+
+        h1.mb-20 Platforma wireframe kit
+        h4.mb-80.
+          Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+          A small river named Duden flows by their place and supplies
+
+        a(href="#appstore")
+          img.mb-20(src="img/logos/appstore.svg" alt="")
+
+        p Requires iOS 9.2.1 or higher

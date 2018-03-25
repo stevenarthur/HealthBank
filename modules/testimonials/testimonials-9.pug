@@ -1,0 +1,27 @@
+include ../common/common
+include contents
+
+mixin testimonials-9()
+  +main-section({ id: 9, partial: 'testimonials' }).text-center.p-60.p-lg-100
+    h1.mb-60 Testimonials
+
+    +row.slider(id="testimonials-9-slider")
+      each item in testimonialsItems9
+        +testimonials-9-item(item)
+
+
+    script.
+      $('#testimonials-9-slider').flickity({
+        pageDots: false
+      })
+
+
+//- PARTIALS
+mixin testimonials-9-item({ name, text })
+  +col('12').slider-item
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        h4.mb-50!= text
+
+        h3= name
+        p Position, Company

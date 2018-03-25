@@ -1,0 +1,12 @@
+include ../common/common
+
+mixin call-6()
+  +main-section({ id: 6, partial: 'call-to-actions' }).text-center.p-60.p-lg-100
+    h3.mb-30 Follow us and ask for more:
+    +socials-lg({
+      google: true,
+      facebook: true,
+      twitter: true,
+      instagram: true,
+      behance: true
+    })

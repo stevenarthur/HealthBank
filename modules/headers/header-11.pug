@@ -1,0 +1,28 @@
+include ../common/common
+include partials
+
+mixin header-11()
+  +main-section({ id: 11, partial: 'headers', isFluid: true }).bg-light.text-center
+    .ph-15.ph-sm-30.ph-lg-70.p-40.mb-30.mb-lg-140
+      +row('between', 'center')
+        +col(['4', 'lg-auto'])
+          nav.navbar.text-left.mr-15.d-lg-none
+            +burger
+
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three']).d-none.d-lg-block
+
+        +col('auto')
+          +logo
+
+        +col(['4', 'lg-auto'])
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three']).d-none.d-lg-block
+
+    .container
+      +row('center').mb-60
+        +col(['12', 'sm-10', 'lg-8'])
+          h1.mb-40 Wireframe connects the conceptual structure
+          +button
+
+      +row('center')
+        +col(['12', 'sm-10'])
+          .bg-ipad

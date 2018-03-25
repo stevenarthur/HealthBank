@@ -1,0 +1,41 @@
+include ../common/common
+include contents
+
+mixin feature-21()
+  +main-section({ id: 21, partial: 'features' }).text-center.p-60.p-lg-100
+    h1.mb-20 Features
+
+    +row
+      +col
+        ul.nav-tabs#f21-tabs
+          each item, index in featureItems21
+            +feature-21-tab(item, index)
+
+    .tabs-content.text-left
+      each item, index in featureItems21
+        +feautre-21-item(item, index)
+
+    script.
+      $('#f21-tabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+      })
+
+//- PARTIALS
+mixin feature-21-tab({ tab }, index)
+  li(class= (index === 0 ? "active": null))
+    a(href=`#feature-21-tab-${index}` data-toggle="tab")
+      span.badge-light= index+1
+      span= tab
+
+mixin feautre-21-item({ title, text }, index)
+  .tab-panel(id=`feature-21-tab-${index}` class= (index === 0 ? "active": null))
+    .panel
+      +row(null, 'center')
+        +col(['12', 'sm-6'])
+          .p-30.pl-15.pl-sm-30.pl-lg-100
+            h1.mb-20= title
+            h4!= text
+
+        +col(['12', 'sm-6'])
+          img.image(src="img/img-square.png", alt="").pic-md

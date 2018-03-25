@@ -1,0 +1,20 @@
+include ../common/common
+
+mixin contacts-2()
+  +main-section({ id: 2, partial: 'contacts' }).text-center.p-60.p-lg-100
+    h1.mb-20 Get in touch
+    h4.mb-60
+      p
+        a(href="mailto:") hello@greatsimple.io
+      p +1 222-345-0000
+
+    +row('center', 'stretch').text-center.text-sm-left
+      +col(['12', 'sm-6']).mb-40.mb-sm-0
+        .bg-map-left
+          img(src="img/icons/pin.svg").pin
+
+      +col(['12', 'sm-6'])
+        +input({ isLight: true })(type="text" placeholder="Input").mb-20
+        +textarea({ isLight: true })(rows="9").mb-20
+        +button-small
+

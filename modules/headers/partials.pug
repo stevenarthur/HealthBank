@@ -1,0 +1,13 @@
+mixin logo()
+  a(href="")&attributes(attributes)
+    img(src="img/logos/logo.svg")
+
+mixin burger()
+  a(href="")&attributes(attributes)
+    img(src="img/icons/burger.svg")
+
+mixin horizontal-menu(items)
+  nav.navbar&attributes(attributes)
+    each item in items
+      a(href="")= item
+

@@ -1,0 +1,31 @@
+include ../common/common
+include contents
+
+mixin contacts-10()
+  +main-section({ id: 9, partial: 'contacts', isFluid: true }).bg-light.p-60.p-lg-100
+    +col.text-center
+      h1.mb-60 Wireframe connects the underlying conceptual structure
+
+    .container
+      +row
+        +col
+          img.w-full(src="img/maps/map-world.png", alt="")
+
+          each point, index in contactPoints10
+            +contact-10-point(point, index)
+
+
+//- PARTIALS
+mixin contact-10-point({ left, top }, index)
+  .map-pin(style=`left: ${left}%; top: ${top}%;`)
+    img(src="img/icons/pin.svg").pin
+
+  .baloon.baloon-on-map(class=`baloon-${index+1}`)
+    h2.mb-15 Platforma Wireframe
+    .baloon-content
+      img.image(src="img/img-square.png").w-70
+      .baloon-content-text
+        p 958 Rosario Plains
+        p 6328 Jena Springs Suite 176
+        p 1 (999) 111-2300
+

@@ -1,0 +1,45 @@
+include ../common/common
+include contents
+
+mixin team-7()
+  +main-section({ id: 7, partial: 'teams', isFluid: true }).p-60.p-lg-100.text-center
+    +row
+      +col
+        h1.mb-40.mb-lg-60 Team
+    +row.slider.slider-full-three(id="team-slider-7")
+      each item in teamsPeople7
+        +team-7-person(item)
+
+      script.
+        $(document).ready(function(){
+          var groupCells = 3;
+          var viewWidth = $('body').width();
+
+          if (viewWidth < 992 && viewWidth >= 576) groupCells = 2;
+          if (viewWidth < 576) groupCells = 1
+
+          var t7slider = $("#team-slider-7").flickity({
+            cellSelector:    ".slider-item",
+            resize:          true,
+            cellAlign:       'center',
+            contain:         false,
+            imagesLoaded:    true,
+            wrapAround:      true,
+            adaptiveHeight:  true,
+            pageDots:        false,
+            groupCells:      groupCells,
+            prevNextButtons: false
+          });
+
+          t7slider.find('.slider-item').on('click', function() {
+            t7slider.flickity('select', $(this).index() / groupCells);
+          });
+        })
+
+//- PARTIALS
+mixin team-7-person({ name, text })
+  +col(['12', 'sm-6', 'lg-4']).slider-item
+    img.image.mb-20(src="img/img-square.png" alt="").userpic-lg
+    h3= name
+    p.mb-15 Position
+    p!= text

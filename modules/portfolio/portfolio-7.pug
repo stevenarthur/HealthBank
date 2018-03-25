@@ -1,0 +1,52 @@
+include ../common/common
+include contents
+
+mixin portfolio-7()
+  +main-section({ id: 3, partial: 'portfolio' }).text-center.text-sm-left.p-60.p-lg-100
+    +row('between')
+      +col(['12', 'lg-5']).mb-40.mb-lg-60
+        h1.mb-20 Wireframe connects conceptual structure
+        h4.
+          Separated they live in Bookmarksgrove right at the coast of the Semantics,
+          a large language ocean. A small river named Duden flows by their place and
+          supplies it with the necessary regelialia
+
+      +col(['12', 'lg-6'])
+        +row
+          +col(['12', 'sm-6']).col-lg-12.mb-40.mb-lg-30
+            h3 Item title
+            p.
+              Far far away, behind the word mountains,
+              far from the countries Vokalia and Consonantia,
+              there live the blind texts.
+
+          +col(['12', 'sm-6']).col-lg-12.mb-40.mb-lg-30
+            h3 Item title
+            p.
+              The Big Oxmox advised her not to do so, because there were
+              thousands of bad Commas, wild Question Marks and devious
+              Semikoli, but the Little Blind Text didn’t listen
+
+    +row.slider#portfolio-7-slider
+      each item in portfolioItems7
+        +portfolio-7-slider-item()
+
+    script.
+      $("#portfolio-7-slider").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'left',
+        contain: false,
+        imagesLoaded: true,
+        wrapAround: false,
+        adaptiveHeight: true,
+        pageDots: false,
+        groupCells: true,
+        prevNextButtons: true
+      })
+
+
+//- PARTIALS
+mixin portfolio-7-slider-item()
+  .slider-item
+    img.image(src="img/img-16-9.png" alt="").pic-lg

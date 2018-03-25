@@ -1,0 +1,133 @@
+.contacts
+  .bg-map-right
+    background url('../img/maps/map-1.png') no-repeat
+    background-size cover
+    min-height calc(100vw - 30px)
+    border-radius 4px
+
+    +sm()
+      min-height 50%
+
+  .bg-map-left
+    background-image url('../img/maps/map-2.png')
+    background-size cover
+    border-radius 4px
+    min-height calc(100vw - 30px)
+
+    +sm()
+      min-height 100%
+
+  .bg-square-map
+    background-image url('../img/maps/map-4.png')
+    border-radius 4px
+    background-size cover
+
+  .bg-full-map
+    background-image url('../img/maps/map-3.png')
+    background-size cover
+
+  .pin
+    position absolute
+    top 50%
+    left 50%
+    margin -34px 0 0 -10px
+    width 21px
+    height 34px
+
+  .baloon
+    text-align left
+    width 300px
+    position absolute
+    background #ffffff
+    border-radius 4px
+    padding 30px
+    left 50%
+    top 50%
+    margin-left -150px
+    margin-top -85px
+
+    +sm()
+      width 360px
+      margin-left -180px
+
+    &::after
+      content ''
+      left 50%
+      margin-left -10px
+      top 100%
+      border 10px solid transparent
+      border-width 10px 10px 0 10px
+      border-top-color #ffffff
+      position absolute
+
+    +lg()
+      &.left-tail
+        margin-left 15px
+
+        &::after
+          left 40px
+          margin-left 0
+
+    &.baloon-on-map
+      position absolute
+      pointer-events none
+      left 0
+      right 0
+      margin -190px auto 0 auto
+      top 50%
+      opacity 0
+      display none
+
+      +sm()
+        margin -100px auto 0 auto
+
+      &::after
+        display none
+
+      +lg()
+        margin 20px 0 0 -45px
+        transition 0.3s ease opacity
+
+        &.baloon-1
+          left 26%
+          top 33%
+
+        &.baloon-2
+          left 57.5%
+          top 28%
+
+        &.baloon-3
+          left: 85.5%
+          top: 43%
+
+        &.baloon-4
+          left 21.5%
+          top 55.5%
+
+        &.baloon-5
+          left 55%
+          top 52.5%
+
+        &::after
+          display block
+          left 35px
+          margin-left 0
+          top -10px
+          border-width 0 10px 10px 10px
+          border-top-color transparent
+          border-bottom-color #ffffff
+
+  .map-pin
+    position absolute
+
+    &:hover + .baloon.baloon-on-map
+      display block
+      opacity 1
+      z-index 3
+
+  .baloon-content
+    img
+      float left
+      margin-right 15px
+    &-text
+      overflow hidden

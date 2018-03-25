@@ -1,0 +1,42 @@
+include ../common/common
+include contents
+
+mixin feature-12()
+  +main-section({ id: 12, partial: 'features'}).text-center.pt-60.pt-lg-100.pb-20.pb-lg-60
+    h1.mb-40 Feature
+
+    ul.nav-tabs.mb-30(id="feature-12-tabs")
+      each item, index in featureItems12
+        +feature-12-tab(item, index)
+
+    .tabs-content.text-left
+      each item, index in featureItems12
+        +feature-12-tab-panel(item, index)
+
+    script.
+      $('#feature-12-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+
+
+//- PARTIALS
+mixin feature-12-tab({ tab }, index)
+  li(class= (index === 0 ? "active": null))
+    a(href=`#feature-12-tab-${index}` data-toggle="tab")=tab
+
+
+mixin feature-12-tab-panel({ items }, index)
+  .tab-panel(id=`feature-12-tab-${index}` class= (index === 0 ? "active": null))
+    +row('between')
+      +col(['12', 'sm-6', 'lg-5'])
+        each item in items.left
+          .mb-40
+            h3= item.title
+            p!= item.text
+
+      +col(['12', 'sm-6', 'lg-5'])
+        each item in items.right
+          .mb-40
+            h3= item.title
+            p!= item.text

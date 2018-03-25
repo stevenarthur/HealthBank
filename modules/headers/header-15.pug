@@ -1,0 +1,38 @@
+include ../common/common
+include partials
+
+mixin header-15()
+  +main-section({ id: 15, partial: 'headers', isFluid: true }).bg-light.text-center
+    .ph-15.ph-sm-30.ph-lg-70.p-40.mb-20.mb-lg-70
+      +row('between', 'center')
+        +col('auto')
+          +logo
+
+        +col('auto')
+          nav.navbar.d-none.d-sm-block
+            a(href="")
+              img(src="img/shares/twitter.svg")
+            a(href="")
+              img(src="img/shares/facebook.svg")
+            a(href="")
+              img(src="img/shares/linkedin.svg")
+
+    .container
+      +row('center').mb-50
+        +col(['12', 'sm-10', 'lg-6'])
+          h1.mb-20 Wireframe connects the  conceptual structure
+          h4.mb-30.
+            Far far away, behind the word mountains, far from the countries Vokalia
+            and Consonantia, there live the blind texts away
+
+          +row('center')
+            +col('auto').mb-10
+              a(href="#appstore")
+                img(src="img/logos/appstore.svg" alt="")
+            +col('auto').mb-10
+              a(href="#gplay")
+                img(src="img/logos/googleplay.svg", alt="")
+
+      +row('center')
+        +col(['12', 'sm-10'])
+          .bg-ipad

@@ -1,0 +1,20 @@
+include ../common/common
+
+mixin contacts-4()
+  +main-section({ id: 4, partial: 'contacts' }).bg-light.text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-8', 'md-6'])
+        p.mb-30.
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live in Bookmarksgrove right.
+
+        p.mb-30
+          a(href="mailto:") hello@greatsimple.ru
+
+        +socials({
+          google: true,
+          facebook: true,
+          twitter: true,
+          instagram: true,
+          behance: true
+        })

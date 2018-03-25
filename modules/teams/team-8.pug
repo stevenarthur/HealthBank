@@ -1,0 +1,44 @@
+include ../common/common
+include contents
+
+mixin team-8()
+  +main-section({ id: 8, partial: 'teams' }).p-60.p-lg-100.text-center.text-sm-left
+    +row.slider#team-slider-8
+      each item in teamsPeople8
+        +team-8-person(item).slider-item
+
+  script.
+    $(document).ready(function(){
+
+      $("#team-slider-8").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'center',
+        contain: false,
+        wrapAround: false,
+        adaptiveHeight: true,
+        pageDots: false,
+        groupCells: false,
+        prevNextButtons: true
+      })
+    })
+
+
+//- PARTIALS
+mixin team-8-person(name)
+  +col()&attributes(attributes)
+    +row('between', 'center')
+      +col(['12', 'sm-6'])
+        img.mb-40.mb-sm-0.image(src="img/img-square.png" alt="").userpic-xl
+
+      +col(['12', 'sm-6', 'lg-5'])
+        h5.mb-30 The team
+        .team-userpics.mb-30
+          each pic in [1, 2, 3, 4, 5]
+            img(src="img/pics/user-round-50.svg" alt="")
+
+        h2.mb-10= name
+        p.mb-20 Position
+        h4.
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
+          texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.

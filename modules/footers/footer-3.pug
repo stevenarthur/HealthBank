@@ -1,0 +1,15 @@
+include partials
+
+mixin footer-3()
+  +main-section({ id: 3, partial: 'footers', isFluid: true }).text-center.text-sm-left
+    .p-40.ph-15.ph-sm-30.ph-lg-70
+      +row('between', 'center')
+        +col(['12', 'sm-auto'])
+          +row('center', 'center')
+            +col(['12', 'sm-auto']).mb-20.mb-sm-0.mr-sm-10
+              +logo
+            +col(['12', 'sm-auto']).mb-20.mb-sm-0
+              p &copy; 2016 Great Simple All rights reserved
+
+        +col(['12', 'sm-auto'])
+          a.arrow.arrow-top(href="") Back to the top

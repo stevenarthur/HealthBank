@@ -1,0 +1,35 @@
+include ../common/common
+include contents
+
+mixin blog-12()
+  +main-section({ id: 12,  partial: 'blogs' }).pt-60.pt-lg-100.pb-20.pb-lg-60
+    +row.text-center
+      +col
+        h1.mb-60 Blog
+
+    +row.text-center.text-sm-left
+      +col(['12', 'lg-6']).mb-40
+        img.image.mb-30(src="img/img-square.png").pic-lg
+        h2.mb-15 Wireframe connects the underlying conceptual structure
+        p.mb-30.
+          Far far away, behind the word mountains,
+          far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live
+          in Bookmark-sgrove right at the coast of the
+          Semantics, a large language ocean.
+
+        a.b-500.arrow(href="") Read more
+
+      +col(['12', 'lg-6'])
+        +row
+          each item in blogItems12
+            +blog-12-small-item(item)
+
+
+//- PARTIALS
+mixin blog-12-small-item({ date, title, text })
+  +col(['12', 'sm-6']).mb-40
+    img.image.mb-20(src="img/img-4-3.png").pic-sm
+    p.mb-10= date
+    h2.mb-15= title
+    p!= text

@@ -1,0 +1,52 @@
+include ../common/common
+include contents
+include partials
+
+mixin header-7()
+  +main-section({ id: 7, partial: 'headers', isFluid: true }).text-center.pb-60.pb-lg-100
+    .bb.ph-15.ph-sm-30.ph-lg-70.p-30.mb-30.mb-lg-90
+      +row('between', 'center')
+        +col(['2', 'sm-4']).text-left
+          nav.navbar.d-lg-none
+            +burger
+
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three']).d-none.d-lg-block
+
+        +col('auto')
+          +logo
+
+        +col(['2', 'sm-4']).text-right
+          nav.navbar.d-none.d-lg-block
+            a(href="") Menu one
+            a(href="") Menu two
+            a(href="")
+              |Cart
+              .badge-dark 1
+
+    .container
+      +row('center').mb-40
+        +col(['12', 'sm-10', 'lg-8'])
+          h1.mb-40 Wireframe connects the underlying conceptual structure
+          +button
+
+      +row.slider(id="header-7-slider")
+        each item in slidesHeader7
+          +header-7-slide(item)
+
+    script.
+      $("#header-7-slider").flickity({
+        cellSelector: ".slider-item",
+        cellAlign: 'left',
+        contain: true,
+        pageDots: false,
+        groupCells: true
+      })
+
+
+//- PARTIALS
+mixin header-7-slide({ title })
+  +col(['12', 'sm-6', 'lg-4']).slider-item
+    .panel.p-120
+      img.mb-30(src="img/pics/pic-70.svg", alt="")
+      h2.mb-10= title
+      a.arrow.b-500(href="") Read more

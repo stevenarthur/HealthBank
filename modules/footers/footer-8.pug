@@ -1,0 +1,19 @@
+include partials
+
+mixin footer-8()
+  +main-section({ id: 8, partial: 'footers' }).text-center
+    .p-40
+      +row('center', 'center')
+        +col(['12', 'lg-3']).text-lg-left.mb-20.mb-lg-0
+          +logo
+
+        +col(['12', 'lg-6']).mb-20.mb-lg-0
+          nav.navbar
+            a(href="") Menu One
+            a(href="") Menu Two
+            a(href="") Menu Three
+            a(href="") Menu Four
+            a(href="") Menu Five
+
+        +col(['12', 'lg-3']).text-lg-right
+          p &copy; 2016 Great Simple

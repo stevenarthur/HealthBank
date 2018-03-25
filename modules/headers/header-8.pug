@@ -1,0 +1,29 @@
+include ../common/common
+include partials
+
+mixin header-8()
+  +main-section({ id: 8, partial: 'headers', isFluid: true }).bg-light.bg-iphone-left.text-center.text-lg-left
+    .ph-15.ph-sm-30.ph-lg-70.p-40
+      +row('between', 'center')
+        +col('auto')
+          +logo
+
+        +col('auto')
+          +burger
+
+    .container.pt-30.pt-lg-160.pb-110.pb-lg-240
+      +row('center').justify-content-lg-start
+        +col(['12', 'lg-6'])
+
+        +col(['12', 'sm-8', 'lg-5'])
+          h1.mb-20 Platforma wireframe
+          h4.mb-60.
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts away
+
+          .form-group
+            +row.no-gutters
+              +col('8')
+                +input(type="text" placeholder="Input")
+              +col('4')
+                +button.w-full

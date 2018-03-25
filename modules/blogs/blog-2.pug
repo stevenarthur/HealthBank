@@ -1,0 +1,41 @@
+include ../common/common
+include contents
+
+mixin blog-2()
+  +main-section({ id: 2,  partial: 'blogs' }).pt-60.pt-lg-100.pb-45.pb-sm-60.pb-lg-70
+    h1.text-center.mb-60 Blog
+
+    +row
+      each item in blogItems2
+        +blog-2-item(item)
+
+
+//- PARTIALS
+mixin blog-2-item({ title, date, text, isVideo })
+  +col(['12', 'sm-4']).mb-15.mb-sm-30
+    .card
+      if isVideo
+        .video-sm
+          img.image(src="img/img-4-3.png" alt="")
+      else
+        img.image(src="img/img-4-3.png" alt="").pic-sm
+
+      .ph-15.ph-lg-30
+        .p-30
+          p.mb-10= date
+          h2.mb-15= title
+          p!= text
+
+        +row('between', 'center').p-15.no-gutters.post-footer
+          +col('auto').d-flex
+            .mr-10.mr-lg-30
+              span.glyphicon.glyphicon-comment
+              span 123
+
+            .mr-10.mr-lg-30
+              span.glyphicon.glyphicon-eye-open
+              span 4567
+
+          +col('auto')
+            a(href="")
+              span.glyphicon.glyphicon-share-alt

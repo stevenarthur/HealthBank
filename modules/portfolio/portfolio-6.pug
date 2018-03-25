@@ -1,0 +1,32 @@
+include ../common/common
+include contents
+
+mixin portfolio-6()
+  +main-section({ id: 6, partial: 'portfolio' }).pt-60.pt-lg-100.pb-45.pb-sm-30.pb-lg-70
+    +row('center', 'stretch')
+      each item, index in portfolioItems6
+        if (index == 6)
+          +portfolio-6-item-wide(item)
+        else
+          +portfolio-6-item(item)
+
+
+//- PARTIALS
+mixin portfolio-6-item-wide({ title, text, date })
+  +col(['12', 'lg-6']).mb-30
+    .ratio-2-1.card
+      +row('center', 'center')
+        +col
+          .ph-30
+            p.mb-10= date
+            h2.mb-15= title
+            p!= text
+
+
+mixin portfolio-6-item({ title })
+  +col(['12', 'sm-6', 'lg-3']).text-center.mb-30
+    .ratio-1-1.bg-light
+      +row('center', 'center')
+        +col
+          img.mb-40(src="img/pics/star-54.svg", alt="")
+          h3= title

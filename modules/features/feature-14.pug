@@ -1,0 +1,41 @@
+include ../common/common
+include contents
+
+mixin feature-14()
+  +main-section({ id: 14, partial: 'features' }).p-60.p-lg-100.text-center.text-sm-left
+    .tabs-content
+      each item, index in featureItems14
+        +feature-14-tab-panel(item, index)
+
+    +row.plain-tabs.text-left(id="feature-14-tabs")
+      each item, index in featureItems14
+        +feature-14-tab(item, index)
+
+    script.
+      $('#feature-14-tabs a').click(function (e) {
+        e.preventDefault()
+        var currentId = $(this).attr('href');
+        $('#feature-14-tabs .active').removeClass('active');
+
+        $(this).closest('.plain-tab').addClass('active');
+        $(currentId).siblings().removeClass('active');
+        $(currentId).addClass('active');
+      })
+
+
+//- PARTIALS
+mixin feature-14-tab({ title, text }, index)
+  +col(['12', 'sm-3']).plain-tab(class= (index === 0 ? "active": null))
+    a(href=`#feature-14-tab-${index}`)
+      h5.mb-10= title
+      p!= text
+
+mixin feature-14-tab-panel({ text }, index)
+  .tab-panel(id=`feature-14-tab-${index}` class= (index === 0 ? "active": null))
+    +row(null, 'center').mb-50.mb-lg-90
+      +col(['12', 'sm-7', 'lg-8']).mb-40.mb-sm-0
+        h1.mb-20 Platforma wireframe
+        h4!= text
+
+      +col(['12', 'sm-4', 'lg-3'])
+        img.image(src='img/img-square.png').pic-sm

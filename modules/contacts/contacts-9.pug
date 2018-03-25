@@ -1,0 +1,13 @@
+include ../common/common
+
+mixin contacts-9()
+  +main-section({ id: 9, partial: 'contacts', isFluid: true }).text-center
+    .container
+      +row('center').p-60.p-lg-100
+        +col(['12', 'sm-10', 'lg-6'])
+          h1.mb-20 Contact us
+          h4.mb-20 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
+          +button
+
+    .h-300.bg-full-map
+      img(src="img/icons/pin.svg").pin

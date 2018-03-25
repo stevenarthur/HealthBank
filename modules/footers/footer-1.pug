@@ -1,0 +1,18 @@
+include ../common/common
+
+mixin footer-1()
+  +main-section({ id: 1, partial: 'footers', isFluid: true }).text-center.text-sm-left
+    .p-40.ph-15.ph-sm-30.ph-lg-70
+      +row('center', 'center').justify-content-sm-between
+        +col('auto').mb-10.mb-sm-0
+          p © 1823 — 2016 Great Simple Studio
+
+        +col('auto')
+          +socials({
+            google: true,
+            facebook: true,
+            twitter: true,
+            instagram: true,
+            behance: true
+          })
+

@@ -1,0 +1,19 @@
+include ../common/common
+include contents
+
+mixin price-7()
+  +main-section({ id: '7', partial: 'prices' }).text-center.pt-60.pt-lg-100.pb-45.pb-lg-85
+    h1.mb-60 Pricing table
+
+    +row
+      each item in priceItems7
+        +price-7-item(item)
+
+
+//- PARTIALS
+mixin price-7-item({ title, price })
+  +col(['12', 'sm-4']).mb-15
+    .card.pt-40.pb-30.ph-30
+      img.mb-20(src="img/pics/star-54.svg" alt="")
+      h2.mb-10= title
+      p= `From $${price}`

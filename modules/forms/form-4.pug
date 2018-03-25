@@ -1,0 +1,17 @@
+include ../common/common
+
+mixin form-4()
+  +main-section({ id: 3, partial: 'forms' }).text-center.p-60.p-lg-100
+    +row
+      +col
+        h1.mb-40 Subscribe
+
+    +row('center')
+      +col(['12', 'sm-8', 'lg-5'])
+        form
+          +row.form-group.no-gutters
+            +col('8')
+              +input({ icon: 'plane-light', isLight: true })(type="text" placeholder="Input").icon-left
+            +col('4')
+              +button.w-full
+

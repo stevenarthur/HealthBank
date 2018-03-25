@@ -1,0 +1,27 @@
+include ../common/common
+include contents
+
+mixin content-22()
+  +main-section({ id: 22, partial: 'contents', isFluid: true }).text-center.text-lg-left
+    +row('between', 'center').no-gutters
+      +col(['12', 'lg-6']).bg-light
+        .image.h-50v.pic-lg
+
+      +col(['12', 'lg-6'])
+        .pt-50.pt-lg-100.pb-70.pb-lg-100.ph-15.ph-sm-30.ph-lg-100
+          h5.mb-20 Tag
+          h1.mb-20 Platforma wireframe
+          h4.mb-50.
+            When she reached the first hills of the Italic Mountains, she had a last view back on the
+            skyline of her hometown Bookmarksgrove
+
+          +row('center', 'center').justify-content-lg-start
+            each item in contentLogos22
+              +content-22-logo(item)
+
+
+//- PARTIALS
+mixin content-22-logo(path)
+  +col(['6', 'sm-4']).p-10.p-lg-30
+    a(href="")
+      img(src=path alt="")

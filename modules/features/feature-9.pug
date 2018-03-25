@@ -1,0 +1,24 @@
+include ../common/common
+include contents
+
+mixin feature-9()
+  +main-section({ id: 9, partial: 'features' }).text-center.text-sm-left.bg-iphone-left.pt-60.pt-lg-150.pb-lg-70
+    +row('center')
+      +col(['12', 'sm-5','lg-5'])
+      +col(['12', 'sm-7','lg-5'])
+        h1.mb-20 Platforma Wireframe
+        h4.mb-70 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts
+
+        +row.text-left
+          +col(['12', 'sm-8'])
+            each item in featureItems9
+              +feature-9-item(item)
+
+//- PARTIALS
+mixin feature-9-item({ title })
+  .d-flex.mb-50.feature-callout
+    .mr-25
+      img(src="img/pics/check-54.svg" alt="")
+
+    div
+      h3.mb-10!= title

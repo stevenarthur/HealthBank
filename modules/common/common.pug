@@ -1,0 +1,74 @@
+mixin button(options = {})
+  if options.isLink
+    a.btn(class= options.icon ? 'btn-icon' : null)&attributes(attributes)
+  else
+    button.btn(class= options.icon ? 'btn-icon' : null)&attributes(attributes)
+
+      if options.glyphicon
+        span.glyphicon.icon-20(class= `glyphicon-${options.glyphicon}`)
+
+      if options.icon
+        span.icon(class= `icon-${options.icon}`)
+
+      if options.text
+        span= options.text
+      else
+        span= options.glyphicon || options.icon ? "Button with icon" : "Button"
+
+mixin button-small(options = {})
+  if options.isLink
+    a.btn.btn-small&attributes(attributes)= options.text || "Button"
+  else
+    button.btn.btn-small&attributes(attributes)= options.text || "Button"
+
+mixin input(options = {})
+  div
+    input.form-control(type="text" class=[
+      options.isLight ? 'form-control-light' : null,
+      options.isWhite ? 'form-control-white' : null, options.isSmall ? 'form-control-small' : null
+    ])&attributes(attributes)
+    if options.glyphicon
+      span.glyphicon.glyphicon-eye-open.form-control-feedback
+    if options.icon
+      span.icon(class=`icon-${options.icon}`)
+
+mixin textarea(options = {})
+  div
+    textarea.form-control(placeholder="Input" class=options.isLight ? 'form-control-light' : null)&attributes(attributes)
+    .icon.icon-resize
+
+mixin main-section({ id, partial, isFluid })
+  section(id=`${partial}-${id}`, class=[partial])&attributes(attributes)
+    if isFluid
+      block
+    else
+      .container
+        block
+
+mixin row(justify, align)
+  .row(class = [
+    justify ? `justify-content-${justify}` : null,
+    align ? `align-items-${align}` : null
+  ])&attributes(attributes)
+    if block
+      block
+
+mixin col(sizes = ['12'])
+  div(class= (typeof sizes == 'string') ? [`col-${sizes}`] : sizes.map((item) => `col-${item}`))&attributes(attributes)
+    if block
+      block
+
+mixin socials(networks)
+  .socials&attributes(attributes)
+    each icon in ['facebook', 'twitter', 'instagram', 'behance', 'google']
+      if networks[icon]
+        a(href="")
+          img(src=`img/socials/${icon}.svg`)
+
+
+mixin socials-lg(networks)
+  .socials-lg&attributes(attributes)
+    each item in [{ icon: 'facebook', size: 20 }, { icon: 'twitter', size: 34 }, { icon: 'instagram', size: 32 }, { icon: 'behance', size: 38 }, { icon: 'google', size: 44 }]
+      if networks[item.icon]
+        a(href="")
+          img(src=`img/socials/${item.icon}.svg` width=item.size)

@@ -1,0 +1,19 @@
+include ../common/common
+
+mixin form-2()
+   +main-section({ id: 2, partial: 'forms' }).text-center.pt-60.pt-lg-100.pb-40.pb-sm-60.pb-lg-80
+      h1.mb-40 Sign Up
+
+      form
+        +row('center')
+          +col(['12', 'sm-10'])
+            +row
+              +col(['12', 'sm-4']).mb-20
+                +input({ isLight: true })(type="text" placeholder="Input")
+              +col(['12', 'sm-4']).mb-20
+                +input({ isLight: true })(type="text" placeholder="Input")
+              +col(['12', 'sm-4']).mb-20
+                +input({ glyphicon: true, isLight: true })(type="text" placeholder="Input with icon")
+          +col(['12', 'sm-2', 'lg-2'])
+            +button.w-full.no-padding
+

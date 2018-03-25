@@ -1,0 +1,30 @@
+include ../common/common
+include contents
+
+mixin testimonials-11()
+  +main-section({ id: 11, partial: 'testimonials' }).text-center.p-60.p-lg-100
+    h1.mb-60 Testimonials
+
+    +row.slider(id="testimonials-11-slider")
+      each item in testimonialsItems11
+        +testimonials-11-item(item)
+
+
+    script.
+      $('#testimonials-11-slider').flickity({
+        cellAlign:  'left',
+        contain:    true,
+        groupCells: true
+      })
+
+//- PARTIALS
+mixin testimonials-11-item({ name, text })
+  +col(['12', 'sm-6', 'lg-4']).slider-item
+    .card.p-30.ph-30
+      img.mb-40(src="img/pics/user-round-90.svg")
+
+      p.mb-40!= text
+
+      h5= name
+      p Position
+

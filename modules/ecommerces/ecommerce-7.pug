@@ -1,0 +1,23 @@
+include ../common/common
+include contents
+
+mixin ecommerce-7()
+  +main-section({ id: 7, partial: 'ecommerces' }).p-60.p-lg-100.text-center
+    +row
+      each item in ecommerceItems7
+        +ecommerce-7-item(item)
+
+//- PARTIALS
+mixin ecommerce-7-item({ title, text, price, isPhoto, isLarge })
+  +col(isLarge ? ['12', 'lg-8'] : ['12', 'sm-6', 'lg-4']).mb-15.mb-sm-30
+    if isPhoto
+      .image(class=isLarge?'ratio-2-1':'ratio-1-1').pic-md
+    else
+      .card.ratio-1-1
+        +row('center', 'center')
+          +col
+            .ph-30
+              img.mb-20(src="img/pics/star-54.svg" alt="")
+              h3.mb-10= title
+              p.mb-40= text
+              p= `$${price}`

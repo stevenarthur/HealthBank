@@ -1,0 +1,178 @@
+// Colors
+.bg-light
+  background-color Light
+
+.bg-accent
+  background-color Accent
+
+.bg-white
+  background-color #fff
+
+.text-accent
+  color AccentDark
+
+.text-light
+  color Light
+
+.text-white
+  color white
+
+.text-capitalize
+  text-transform capitalize
+
+.icon-20
+  width 20px
+  height 20px
+  font-size 20px
+  line-height 1
+  vertical-align middle
+  top -2px
+
+  img
+    display inline-block
+    height 100%
+
+.icon-20 + span
+  display inline-block
+  vertical-align middle
+  margin-left 10px
+
+// Font weight
+.b-300
+  font-weight 300
+
+.b-400
+  font-weight 400
+
+.b-500
+  font-weight 500
+
+// Margins, paddings
+.m-auto
+  margin 0 auto
+
+for num in -60 -50 -40 -30 -20 -15 -10 -5 0 5 10 15 20 25 30 40 45 50 60 70 80 85 90 100 110 120 130 140 150 160 170 180 190 200 220 240 260
+  if num >= 0
+    .p-{num}
+      padding-top 1px * num
+      padding-bottom 1px * num
+
+    .p-sm-{num}
+      +sm()
+        padding-top 1px * num
+        padding-bottom 1px * num
+
+    .p-md-{num}
+      +md()
+        padding-top 1px * num
+        padding-bottom 1px * num
+
+    .p-lg-{num}
+      +lg()
+        padding-top 1px * num
+        padding-bottom 1px * num
+
+    .ph-{num}
+      padding-left 1px * num
+      padding-right 1px * num
+
+    .ph-sm-{num}
+      +sm()
+        padding-left 1px * num
+        padding-right 1px * num
+
+    .ph-md-{num}
+      +md()
+        padding-left 1px * num
+        padding-right 1px * num
+
+    .ph-lg-{num}
+      +lg()
+        padding-left 1px * num
+        padding-right 1px * num
+
+  for name in 'mt' 'mb' 'ml' 'mr' 'pb' 'pt' 'pl' 'pr'
+    style = {
+      ml: 'margin-left',
+      mr: 'margin-right',
+      mt: 'margin-top',
+      mb: 'margin-bottom',
+      pb: 'padding-bottom',
+      pt: 'padding-top',
+      pl: 'padding-left',
+      pr: 'padding-right'
+    }[name]
+
+    .{name}-{num}
+      {style} 1px * num
+
+    .{name}-sm-{num}
+      +sm()
+        {style} 1px * num !important
+
+    .{name}-md-{num}
+      +md()
+        {style} 1px * num !important
+
+    .{name}-lg-{num}
+      +lg()
+        {style} 1px * num !important
+
+
+// Width, height
+for num in 40 42 50 70 80 90 100 240 260 300 310 340 360 400 450 540 555 600 700
+  for name in 'h' 'w'
+    style = {
+      w: 'width',
+      h: 'height'
+    }[name]
+
+    .{name}-{num}
+      {style} 1px * num
+
+    .{name}-sm-{num}
+      +sm()
+        {style} 1px * num
+
+    .{name}-md-{num}
+      +md()
+        {style} 1px * num
+
+    .{name}-lg-{num}
+      +lg()
+        {style} 1px * num
+
+
+.w-auto
+  width auto
+
+.w-full
+  width 100%
+
+.w-sm-auto
+  +sm()
+    width auto
+
+.w-sm-full
+  +sm()
+    width 100%
+
+.h-50v
+  min-height 100vw
+
+  +sm()
+    min-height 50vw
+
+
+// Borders
+.bt
+  border-top 1px solid Light
+
+.br
+  border-right 1px solid Light
+
+.bb
+  border-bottom 1px solid Light
+
+.bb-light
+  border-bottom 1px solid lightness(Accent, 80%)

@@ -1,0 +1,27 @@
+include ../common/common
+include contents
+
+mixin content-13()
+  +main-section({ id: 13, partial: 'contents' }).pt-60.pt-lg-100.pb-30.pb-sm-60.pb-lg-100
+    +row('between', 'center')
+      +col(['12', 'sm-6']).mb-40.mb-lg-0
+        img.image(src="img/img-square.png", alt="").pic-lg
+
+      +col(['12', 'sm-6', 'lg-5'])
+        h1.mb-20 Platforma
+        h4.mb-30.
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts
+
+        each item in contentSubtems13
+          +content-13-subitem(item)
+
+
+//- PARTIALS
+mixin content-13-subitem({ title, text })
+  .d-flex.mb-30
+    .mr-25
+      img(src="img/pics/check-36.svg", alt="")
+    div
+      h3= title
+      p!= text

@@ -1,0 +1,33 @@
+include ../common/common
+include contents
+
+mixin content-18()
+  +main-section({ id: 18, partial: 'contents' }).pt-60.pt-lg-100.pb-30.pb-lg-70
+    +row.text-center
+      +col
+        h1.mb-60 Frequently asked questions
+
+    +row
+      each item in contentItems18
+        +content-18-item(item)
+
+  script.
+    $('#contents-18 h3').next().hide()
+    $('#contents-18 h3 a').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('h3').next().toggle();
+    });
+
+
+//- PARTIALS
+mixin content-18-item({ title, answer })
+  +col(['12', 'sm-6']).d-flex.mb-40
+    .mr-25
+      img(src="img/ok.svg", alt="")
+    div
+      h3
+        a(href="")= title
+      +content-18-answer(answer)
+
+mixin content-18-answer(answer)
+  h4.mt-10!= answer

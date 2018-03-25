@@ -1,0 +1,27 @@
+include ../common/common
+include contents
+
+mixin feature-7()
+  +main-section({ id: 7, partial: 'features' }).bg-iphone-center.pt-60.pt-lg-100.pb-20.pb-lg-70
+    h1.text-center.mb-40.mb-lg-190 Features
+
+    +row('between')
+      +col(['12', 'sm-6', 'lg-3']).text-center.text-sm-left.text-lg-right
+        +feature-7-item(0)
+        +feature-7-item(1)
+        +feature-7-item(2)
+
+      +col(['12', 'sm-6', 'lg-3']).text-center.text-sm-left
+        +feature-7-item(3)
+        +feature-7-item(4)
+        +feature-7-item(5)
+
+
+//- PARTIALS
+mixin feature-7-item(i)
+  .mb-40
+    .mb-20
+      img(src="img/pics/check-36.svg" alt="")
+
+    h3.mb-5= featureItems7[i]['title']
+    p!= featureItems7[i]['text']

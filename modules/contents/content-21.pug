@@ -1,0 +1,26 @@
+include ../common/common
+include contents
+
+mixin content-21()
+  +main-section({ id: 21, partial: 'contents', isFluid: true }).text-center
+    +row('center', 'stretch').no-gutters.h-50v
+      each item in contentItems21
+        +content-21-item(item)
+
+
+//- PARTIALS
+mixin content-21-item({ title, text, hasIcon })
+  +col(['12', 'lg-6']).divided-item.d-flex
+    +col.align-self-center
+      .p-80.p-lg-100.ph-15.ph-30.ph-lg-100
+        img.mb-60(src="img/pics/pic-100.svg" alt="")
+
+        h2.mb-10= title
+        p.mb-70!= text
+
+        if hasIcon
+          a.b-500(href="")
+            span.glyphicon.glyphicon-star.icon-20
+            span Watch slideshow
+        else
+          a.b-500.arrow(href="") Learn more

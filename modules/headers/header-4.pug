@@ -1,0 +1,34 @@
+include ../common/common
+include partials
+
+mixin header-4()
+  +main-section({ id: 4, partial: 'headers', isFluid: true }).bg-macbook-left.bg-light
+    .ph-15.ph-sm-30.ph-lg-70.p-40
+      +row('between', 'center')
+        +col('auto')
+          +logo
+
+        +col('auto').d-flex.align-items-center
+          nav.navbar.mr-sm-15.d-lg-none
+            +burger
+
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three', 'Menu four']).ml-15.mr-60.d-none.d-lg-block
+
+          nav.navbar.d-none.d-sm-block
+            +button-small({ text: 'GS', isLink: true }).w-42.no-padding
+            a(href="")
+              img(src="img/icons/bell.svg")
+            a(href="")
+              img(src="img/icons/dots.svg")
+
+    .container.text-center.text-lg-left.pt-30.pt-lg-100.pb-60.pb-lg-180
+      +row('center').justify-content-lg-end
+        +col(['12', 'sm-8', 'lg-6'])
+          h1.mb-20 Wireframe connects the conceptual structure
+          h4.mb-100.
+            Far far away, behind the word mountains far from the countries Vokalia and Consonantia,
+            there live the blind texts
+
+          a.b-500.rounded-arrow(href="")
+            span Far far away, behind<br>the word mountains
+            .icon.icon-circle-arrow

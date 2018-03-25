@@ -1,0 +1,29 @@
+include ../common/common
+include contents
+
+mixin feature-19()
+  +main-section({ id: 18, partial: 'features' }).p-60.p-lg-100.text-center
+    h1.mb-60 Wireframe connects the underlying conceptual structure
+
+    +row('center')
+      each item in featureItems19
+        +feature-19-item(item)
+
+
+//- PARTIALS
+mixin feature-19-circle(percent)
+  svg.circle(style="transform: rotate(-90deg)" width="230" height="230" viewbox="0 0 230 230" data-value= percent)
+    circle(cx="115" cy="115" r="100" fill="none" stroke-width=4 stroke="#e4f1fd")
+    circle.circle-value(cx="115" cy="115" r="100" fill="none" stroke-width=4 stroke="#3fa2f7" stroke-dasharray= `${percent*6.3} 630`)
+
+
+mixin feature-19-item({ percent, text })
+  +col(['12', 'sm-4', 'lg-4'])
+    .percentage.m-auto
+      .percentage__circle
+        +feature-19-circle(percent)
+
+      +row('center', 'center').percentage__content
+        +col(['8'])
+          h1= `${percent}%`
+          p!= text

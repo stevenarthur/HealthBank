@@ -1,0 +1,34 @@
+include ../common/common
+include contents
+
+mixin team-3()
+  +main-section({ id: 3, partial: 'teams' }).p-60.p-lg-100.text-center
+    +row
+      +col
+        h1.mb-40.mb-lg-60 Team
+
+    +row('between').mb-30
+      each item, index in teamsPeople3
+        +team-3-person(item)
+
+    +row
+      +col
+        +button({ icon: 'star' })
+
+
+//- PARTIALS
+mixin team-3-person({ name, text })
+  +col(['12', 'sm-6', 'lg-4']).mb-15.mb-sm-30
+    .with-overlay
+      img.image(src="img/img-square.png" alt="").userpic-xl
+      +row('center', 'center').with-overlay__content
+        +col.ph-30
+          h2= name
+          p.mb-15 Position
+          p.mb-30!= text
+
+          +socials({
+            facebook: true,
+            twitter: true,
+            instagram: true
+          })

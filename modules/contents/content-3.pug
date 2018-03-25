@@ -1,0 +1,25 @@
+include ../common/common
+include contents
+
+mixin content-3()
+  +main-section({ id: 3, partial: 'contents' }).text-center.text-lg-left.pt-60.pt-lg-100.pb-50.pb-lg-100
+    +row('between', 'center')
+      +col(['12', 'lg-5']).mb-40.mb-lg-0
+        h4.mb-40.mb-lg-60.
+          She packed her seven versalia, put her initial into the belt and made herself on the way Far far
+          away, behind the word mountains, far from the countries Vokalia
+
+        a.b-500.arrow(href="") Learn more
+
+      +col(['12', 'lg-6']).text-center
+        +row('center', 'center').no-gutters
+          each item in contentItems3
+            +content-3-item(item)
+
+
+//- PARTIALS
+mixin content-3-item(path)
+  +col(['6', 'sm-4']).p-10.p-lg-30
+    a(href="")
+      img(src= path, alt="")
+

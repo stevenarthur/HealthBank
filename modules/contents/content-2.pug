@@ -1,0 +1,14 @@
+include ../common/common
+
+mixin content-2()
+  +main-section({ id: 2, partial: 'contents' }).text-center.text-sm-left.p-60.p-lg-100
+    +row('between', 'center')
+      +col(['12', 'sm-6', 'lg-5']).mb-30.mb-sm-0
+          h1.mb-20 Platforma
+          h4.
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+            there live the blind texts
+
+      +col(['12', 'sm-6', 'lg-6'])
+        .video
+          img.image(src="img/img-4-3.png" alt="")

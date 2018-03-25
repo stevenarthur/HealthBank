@@ -1,0 +1,15 @@
+include ../common/common
+include contents
+
+mixin grid-4()
+  +main-section({ id: 4, partial: 'grids' }).pt-60.pb-20.pt-lg-100.pb-lg-30.text-center.text-sm-left
+    +row
+      each item in gridItems4
+        +grid-4-item(item)
+
+
+//- PARTIALS
+mixin grid-4-item({ title, text })
+  +col(['12', 'sm-6', 'lg-3']).mb-40.mb-lg-70
+    h3.mb-20= title
+    p!= text

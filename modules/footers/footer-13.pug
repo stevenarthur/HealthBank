@@ -1,0 +1,50 @@
+include partials
+
+mixin footer-13()
+  +main-section({ id: 13, partial: 'footers' })
+    .p-40
+      +row
+        +col(['12', 'lg-3']).text-center.text-lg-left.mb-40.mb-lg-0
+          .mb-30
+            +logo
+          p Far far away, behid the word mountains, far from the countries Vokalia and Consonantia
+
+        +col(['12', 'lg-9'])
+          +row('between', 'start')
+            +col(['6', 'sm-3']).mb-20.mb-sm-0
+              h5.mb-20 First
+              p.mb-5
+                a(href="") Menu One
+              p.mb-5
+                a(href="") Menu Two
+              p.mb-5
+                a(href="") Menu Three
+
+            +col(['6', 'sm-3']).mb-20.mb-sm-0
+              h5.mb-20 Second
+              p.mb-5
+                a(href="") Menu One
+              p.mb-5
+                a(href="") Menu Two
+              p.mb-5
+                a(href="") Menu Three
+
+            +col(['6', 'sm-3']).mb-20.mb-sm-0
+              h5.mb-20 Third
+              p.mb-5
+                a(href="") Menu One
+              p.mb-5
+                a(href="") Menu Two
+              p.mb-5
+                a(href="") Menu Three
+
+            +col(['6', 'sm-3'])
+              .dropdown
+                a(href="" id="footers-13-dropdown" data-toggle="dropdown")
+                  span Language
+                .dropdown-menu(aria-labelledby="footers-13-dropdown")
+                  a(href="") Submenu one
+                  a(href="") Submenu two
+                  a(href="") Submenu three
+                  .dropdown-divider
+                  a(href="") Submenu four

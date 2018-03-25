@@ -1,0 +1,56 @@
+include ../common/common
+include contents
+
+mixin feature-18()
+  +main-section({ id: 18, partial: 'features', isFluid: true }).p-60.p-lg-100.text-center
+    .container
+      h1.mb-60 Wireframe connects the underlying conceptual structure
+
+    .feature-dots
+      .container
+        .feature-18__line.mb-30#f18-tabs
+          .container
+            +row
+              each item, index in featureItems18
+                +feature-18-tab(item, index)
+
+      .container.text-left
+        .tabs-content
+          each item, index in featureItems18
+            +feature-18-content(item, index)
+
+    script.
+      $('#f18-tabs a').click(function (e) {
+        e.preventDefault();
+        $('#f18-tabs a').removeClass('active')
+        $(this).addClass('active')
+        $(this).tab('show')
+      })
+
+
+//- PARTIALS
+mixin feature-18-tab({ title }, index)
+  +col(['6', 'sm-3']).mb-30
+    a(href=`#feature-18-tab-${index}` data-toggle="tab" class=(index == 0 ? 'active' : null))
+      img.mb-20(src="img/pics/check-36.svg")
+      .feature-dot
+      h5= title
+
+mixin feature-18-content(item, index)
+  .tab-panel(id=`feature-18-tab-${index}` class=(index == 0 ? 'active' : null))
+    +row
+      +col(['12', 'sm-6'])
+        h4.p50.
+          Far far away, behind the word mountains,
+          far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live in
+          Bookmarksgrove right at the coast of the Semantics,
+          a large language ocean.
+
+      +col(['12', 'sm-6'])
+        h4.p50.
+          Far far away, behind the word mountains,
+          far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live in
+          Bookmarksgrove right at the coast of the Semantics,
+          a large language ocean.

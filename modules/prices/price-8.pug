@@ -1,0 +1,43 @@
+include ../common/common
+include contents
+
+mixin price-8()
+  +main-section({ id: '8', partial: 'prices' }).text-center.pt-60.pt-lg-100.pb-45.pb-sm-60.pb-lg-100
+    h1.mb-40 Pricing
+
+    ul.nav-tabs.mb-40(id="price-8-tabs")
+      each item, index in priceItems8
+        +price-8-tab(item, index)
+
+    .tabs-content
+      each item, index in priceItems8
+        +price-8-tab-panel(item, index)
+
+    script.
+      $('#price-8-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+
+
+//- PARTIALS
+mixin price-8-tab({ tab }, index)
+  li(class=(index == 0 ? 'active' : null))
+    a(href=`#price-8-tab-${index}` data-toggle="tab")= tab
+
+mixin price-8-item({ title, price, text })
+  +col(['12', 'sm-4']).mb-15.mb-sm-0
+    .card
+      .bg-light.p-30
+        p.mb-10= title
+        h1= `$${price}`
+
+      .p-30.ph-30
+        p.mb-40= text
+        +button-small.w-full
+
+mixin price-8-tab-panel({ items }, index)
+  .tab-panel(id=`price-8-tab-${index}` class=(index == 0 ? 'active' : null))
+    +row
+      each item in items
+        +price-8-item(item)

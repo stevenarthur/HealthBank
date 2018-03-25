@@ -1,0 +1,26 @@
+include ../common/common
+include contents
+
+mixin price-1()
+  +main-section({ id: 1, partial: 'prices' }).text-center.pt-60.pt-lg-100.pb-45.pb-lg-85
+    h1.mb-60 Pricing tables
+
+    +row.card-group.card-group-line.no-gutters
+      each item in priceItems1
+        +price-1-item(item)
+
+
+//- PARTIALS
+mixin price-1-item({ title, teaser, text, price, items })
+  +col(['12', 'sm-4']).mb-15
+    .card.p-30.ph-30
+      h3.mb-10= title
+      p.mb-25!= teaser
+      h1= `$${price}`
+      p.bb.p-25!= text
+
+      .pt-30
+        each item in items
+          .mb-30= item
+
+      +button-small.w-full

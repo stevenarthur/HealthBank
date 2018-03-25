@@ -1,0 +1,16 @@
+include ../common/common
+include contents
+
+mixin grid-2()
+  +main-section({ id: 2, partial: 'grids' }).text-center.pt-60.pb-20.pt-lg-100.pb-lg-60
+    +row('around')
+      each item in gridItems2
+        +grid-2-item(item)
+
+
+//- PARTIALS
+mixin grid-2-item({ title, text })
+  +col(['12', 'sm-6', 'lg-4']).mb-40
+    img.mb-20(src="img/pics/star-54.svg", alt="")
+    h3.mb-20= title
+    p!= text

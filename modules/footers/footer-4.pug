@@ -1,0 +1,24 @@
+include ../common/common
+include partials
+
+mixin footer-4()
+  +main-section({ id: 4, partial: 'footers', isFluid: true }).text-center.text-sm-left
+    .p-40.ph-15.ph-sm-30.ph-lg-70
+      +row('center', 'center').justify-content-lg-between
+        +col(['12', 'sm-auto'])
+          +row('center', 'center').justify-content-sm-start
+            +col(['12', 'sm-auto']).mb-30.mb-sm-0
+              +logo
+
+            +col(['12', 'sm-auto']).mb-20.mb-lg-0
+              nav.navbar
+                a(href="") Menu One
+                a(href="") Menu Two
+                a(href="") Menu Three
+                a(href="") Menu Four
+
+        +col(['12', 'sm-auto'])
+          +row('center', 'center').justify-content-sm-start
+            +col(['12', 'sm-auto']).mb-20.mb-sm-0
+              p &copy; 2016 Great Simple Studio
+

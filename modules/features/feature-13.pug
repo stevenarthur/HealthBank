@@ -1,0 +1,22 @@
+include ../common/common
+include contents
+
+mixin feature-13()
+  +main-section({ id: 13, partial: 'features' }).text-center.pt-60.pt-lg-100.pb-45.pb-sm-30.pb-lg-70
+    h1.mb-60 Features
+
+    +row(null, 'stretch')
+      each item in featureItems13
+        +feature-13-item(item)
+
+
+//- PARTIALS
+mixin feature-13-item({ title, text, isHighlighted })
+  +col(['12', 'sm-6']).mb-15.mb-sm-30
+    .ratio-1-1
+      .d-flex.p-30(class= isHighlighted ? 'panel' : 'card')
+        .align-self-center.ph-15.ph-lg-100
+          img.mb-30(src='img/pics/pic-70.svg')
+          h2.mb-15= title
+          p.mb-30.mb-lg-50!= text
+          +button-small()

@@ -1,0 +1,22 @@
+include ../common/common
+include contents
+
+mixin price-6()
+  +main-section({ id: '6', partial: 'prices' }).text-center.pt-60.pt-lg-100.pb-45.pb-lg-85
+    h1.mb-60 Pricing table
+
+    +row('center', 'start').card-group.no-gutters
+      each item, index in priceItems6
+        +price-6-item(item, index)
+
+
+//- PARTIALS
+mixin price-6-item({ title, description, price, button }, index)
+  +col(['12', 'sm-4']).mb-15(class=(index !== 1 ? 'mt-sm-20' : null))
+    .card.pt-40.pb-30.ph-30
+      h5.mb-60= title
+      img.mb-60(src="img/pics/star-54.svg")
+      p.mb-15= description
+      h1(class=(index == 1 ? 'mb-50' : 'mb-20'))= price
+      if button
+        +button-small.w-full

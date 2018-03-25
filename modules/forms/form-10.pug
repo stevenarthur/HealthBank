@@ -1,0 +1,17 @@
+include ../common/common
+
+mixin form-10()
+   +main-section({ id: 10, partial: 'forms' }).text-center.bg-devices.p-60.p-lg-100
+    +row('center').justify-content-lg-end
+      +col(['12', 'sm-10', 'lg-6'])
+        .bg-white.p-60.ph-15.ph-sm-100
+          h1.mb-20 Sign Up
+          h4.mb-40 Subscribe now and get a exclusive three-month trial promo code
+
+          .mb-30
+            +button({ icon: 'facebook', text: 'Signup with Facebook' }).w-full.no-padding
+            .b-500.mt-20.mb-20 or
+            +button.w-full.no-padding
+
+          a(href="") Already have an account?
+

@@ -1,0 +1,23 @@
+include ../common/common
+
+mixin form-6()
+   +main-section({ id: 6, partial: 'forms' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        h1.mb-40 Contact Us
+
+        form.mb-40
+          +row
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+
+          +textarea({ isLight: true })(rows="1"  placeholder="Input").mb-20
+
+          +button.w-full.no-padding
+
+        p.mb-15 Or just email on
+        p
+          a.mail-link(href="mailto:hello@greatsimple.ru") hello@greatsimple.ru
+

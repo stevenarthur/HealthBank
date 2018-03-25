@@ -1,0 +1,47 @@
+.forms
+  &.bg-macbook
+    background-repeat no-repeat
+    background-position center
+
+    +sm()
+      background-image url('../img/bg/macbook-full.svg')
+      background-size 600px auto
+      background-position-x calc(80% + 315px)
+
+    +lg()
+      background-size 890px auto
+      background-position-x calc(50% + 460px)
+
+  &.bg-devices
+    background-image url('../img/bg/ipads.svg')
+    background-position center
+    background-repeat no-repeat
+    background-size cover
+
+  .checkbox
+    display inline-block
+
+    input
+      position absolute
+      opacity 0
+      z-index -1
+
+      &:checked ~ .check-pointer
+        background url(../img/icons/verification-mark.svg) center no-repeat
+        background-size 80%
+
+    .check-pointer
+      width 25px
+      height 25px
+      border-radius 4px
+      border solid 2px #e4f1fd
+      position absolute
+
+    .checkbox-label
+      opacity 0.8
+      padding-left 35px
+      text-align left
+
+  .mail-link
+    font-size 20px
+    border-bottom 1px solid

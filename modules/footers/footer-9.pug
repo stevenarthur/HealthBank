@@ -1,0 +1,57 @@
+include partials
+
+mixin footer-9()
+  +main-section({ id: 9, partial: 'footers' })
+    .bb
+      +row.p-40.p-lg-80
+        +col(['6', 'sm-3']).mb-40.mb-sm-0
+          h5.mb-20 Category One
+          p.mb-5
+            a(href="") Menu One
+          p.mb-5
+            a(href="") Menu Two
+          p.mb-5
+            a(href="") Menu Three
+          p.mb-5
+            a(href="") Menu Four
+
+        +col(['6', 'sm-3']).mb-40.mb-sm-0
+          h5.mb-20 Category Two
+          p.mb-5
+            a(href="") Menu One
+          p.mb-5
+            a(href="") Menu Two
+          p.mb-5
+            a(href="") Menu Three
+          p.mb-5
+            a(href="") Menu Four
+
+        +col(['6', 'sm-3'])
+          h5.mb-20 Category Three
+          p.mb-5
+            a(href="") hello@greatsimple.io
+          p.mb-5 Studio M, 4th Floor 8 Lower Manchester street, M1 5QF
+          p.mb-5 +38 976 0875 9922
+
+        +col(['6', 'sm-3'])
+          h5.mb-20 Follow us
+          +socials({
+            google: true,
+            facebook: true,
+            twitter: true,
+            instagram: true,
+            behance: true
+          })
+
+
+    +row('between', 'center').text-center.text-sm-left.p-40
+      +col(['12', 'sm-auto']).mb-20.mb-sm-0
+        nav.navbar
+          a(href="") First
+          a(href="") Second
+          a(href="") Third
+          a(href="") Fourth
+          a(href="") Fifth
+
+      +col(['12', 'sm-auto'])
+        p &copy; 1823 &mdash; 2017 Great Simple All rights reserved

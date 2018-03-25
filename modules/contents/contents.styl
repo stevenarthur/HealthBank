@@ -1,0 +1,42 @@
+.contents
+  .divided-item:first-child
+    border-bottom 1px solid Light
+
+    +lg()
+      border-bottom none
+      border-right 1px solid Light
+
+  &.bg-iphone-left
+  &.bg-iphone-right
+    background-repeat no-repeat
+
+    +lg()
+      background-image url('../img/bg/iphone-lg.svg')
+      background-size 420px 853px
+
+  &.bg-iphone-left
+    +lg()
+      background-position calc(50% - 290px) 100px
+
+  &.bg-iphone-right
+    +lg()
+      background-position calc(50% + 290px) 100px
+
+  &.bg-devices
+    background-image url('../img/bg/ipads.svg')
+    background-position center
+    background-repeat no-repeat
+    background-size cover
+
+  &.bg-macbook
+    background-repeat no-repeat
+    background-position center
+
+    +sm()
+      background-image url('../img/bg/macbook.svg')
+      background-size 473px 280px
+      background-position-x calc(50% + 55px)
+
+    +lg()
+      background-size 723px 429px
+      background-position-x calc(50% + 220px)

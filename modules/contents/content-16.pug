@@ -1,0 +1,22 @@
+include ../common/common
+include contents
+
+mixin content-16()
+  +main-section({ id: 16, partial: 'contents' }).bg-iphone-right.text-center.text-lg-left.p-60.p-lg-100
+    +row
+      +col(['12', 'lg-5']).p-40.p-lg-80
+        h1.mb-20 Platforma Kit
+        h4.mb-40.
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts
+
+        +row('center', 'center').justify-content-lg-start
+            each item in contentLogos16
+              +content-16-logo(item)
+
+
+//- PARTIALS
+mixin content-16-logo(path)
+  +col('auto')
+    a(href="")
+      img(src= path alt="")

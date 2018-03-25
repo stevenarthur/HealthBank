@@ -1,0 +1,70 @@
+.headers
+  &.bg-iphone-left
+  &.bg-iphone-right
+    +lg()
+      background-image url('../img/bg/iphone-lg.svg')
+      background-repeat no-repeat
+      background-size 412px auto
+
+  &.bg-iphone-left
+    background-position 25% 154px
+
+  &.bg-iphone-right
+    background-position 75% 154px
+
+  .bg-iphone-left-small
+    +lg()
+      background-image url('../img/iphone-330.svg')
+      background-repeat no-repeat
+      background-size 330px auto
+      background-position center
+
+  &.bg-macbook-left
+    +lg()
+      background-image: url(../img/bg/macbook-full.svg);
+      background-repeat: no-repeat;
+      background-position: -5vw 18vh;
+      background-size: 50vw auto;
+
+  &.bg-devices
+    +lg()
+      background-image url('../img/ipad-iphone.svg')
+      background-repeat no-repeat
+      background-position right 190px
+      background-size 50% auto
+
+
+  .bg-browser
+    background-image url('../img/browserframe.svg')
+    background-repeat no-repeat
+    background-position center top
+    background-size 100% auto
+
+    &::after
+      content ''
+      display block
+      padding-top 30%
+
+  .bg-ipad
+    background-image url('../img/ipad.svg')
+    background-repeat no-repeat
+    background-position center top
+    background-size 100% auto
+
+    &::after
+      content ''
+      display block
+      padding-top 35%
+
+  .striked-header
+    span
+      background Light
+      padding 0 25px
+
+    &::before
+      content ''
+      position absolute
+      left 0
+      right 0
+      top 13px
+      border-bottom 1px solid lightness(Accent, 80%)

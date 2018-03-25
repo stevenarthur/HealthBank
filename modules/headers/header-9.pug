@@ -1,0 +1,39 @@
+include ../common/common
+include partials
+
+mixin header-9()
+  +main-section({ id: 9, partial: 'headers', isFluid: true }).bg-light.text-center.pb-60.pb-sm-80.pb-lg-100
+    .ph-15.ph-sm-30.ph-lg-70.p-40.mb-30.mb-lg-60
+      +row('between', 'center')
+        +col('auto')
+          +logo
+
+        +col('auto')
+          nav.navbar.d-lg-none
+            +burger
+
+          nav.navbar.d-none.d-lg-block
+            a(href="") Menu one
+            a(href="") Menu two
+            a(href="") Menu three
+            .dropdown.dropdown-right
+              a(href="" id="headers-9-dropdown" data-toggle="dropdown") Menu four
+                .dropdown-menu(aria-labelledby="headers-9-dropdown")
+                  a(href="") Submenu one
+                  a(href="") Submenu two
+                  a(href="") Submenu three
+                  .dropdown-divider
+                  a(href="") Submenu four
+
+    .container
+      +row('center')
+        +col(['12', 'sm-10', 'lg-8'])
+          a(href="")
+            img.mb-40(src="img/pics/video-circle.svg" alt="")
+
+          h1.mb-20 Wireframe connects the underlying conceptual structure
+          h4.mb-60.
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts aways
+
+          +button

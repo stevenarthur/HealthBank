@@ -1,0 +1,26 @@
+include partials
+
+mixin footer-11()
+  +main-section({ id: 11, partial: 'footers', isFluid: true }).text-center.text-sm-left
+    .p-40.ph-15.ph-sm-30.ph-lg-70
+      +row('between', 'center')
+        +col(['12', 'lg-auto']).mb-20.mb-lg-0
+          +row('center', 'center')
+            +col('auto').mb-20.mb-sm-0
+              +logo
+            +col('auto')
+              p &copy; 2016 Great Simple All rights reserves
+
+        +col(['12', 'lg-auto'])
+          +row('center', 'center')
+            +col(['12', 'sm-auto']).mb-20.mb-sm-0
+              p +39 02 367 409 12, 560 Mission St, San Francisco CA 94105, USA
+
+            +col('auto')
+              +socials({
+                google: true,
+                facebook: true,
+                twitter: true,
+                instagram: true,
+                behance: true
+              })

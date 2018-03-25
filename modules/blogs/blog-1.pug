@@ -1,0 +1,24 @@
+include ../common/common
+include contents
+
+mixin blog-1()
+  +main-section({ id: 1, partial: 'blogs' }).text-center.pt-60.pt-lg-100.pb-45.pb-sm-60.pb-lg-70
+    h1.mb-60 Latest posts
+
+    +row('center', 'stretch')
+      each item in blogItems1
+        +blog-1-item(item)
+
+//- PARTIALS
+mixin blog-1-item({ icon, title, text, link })
+  +col(['12', 'sm-4']).mb-15.mb-sm-30
+    .panel.p-70.p-lg-110.ph-15.ph-lg-30
+      h2.mb-15= title
+      p.mb-60= text
+
+      if icon
+        a.b-500(href="")
+          span.glyphicon.glyphicon-star
+          span= link
+      else
+        a.b-500.arrow(href="")= link

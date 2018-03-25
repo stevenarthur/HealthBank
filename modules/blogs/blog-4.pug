@@ -1,0 +1,37 @@
+include ../common/common
+
+mixin blog-4()
+  +main-section({ id: 4,  partial: 'blogs' }).pt-60.pt-lg-100.pb-45.pb-sm-30.pb-lg-70
+    h1.text-center.mb-60 Blog
+
+    +row
+      +col(['12', 'lg-6']).mb-15.mb-sm-30
+        .ratio-1-1
+          .card.p-30.p-sm-60.ph-30.ph-sm-60.d-flex.flex-column.justify-content-between
+            div
+              .d-flex.align-items-center.mb-20
+                img.mr-15(src="img/pics/user-round-50.svg")
+                div Author name
+              h4.
+                Far far away, behind the word mountains, far from the countries Vokalia
+                and Consonantia, there live the blind texts. Separated they live in
+                Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean. A small river named Duden flows.
+
+            div
+              a.b-500.arrow(href="") Read more
+
+
+
+      +col(['12', 'lg-6']).mb-15.mb-sm-30
+        .ratio-1-1
+          .panel.p-30.p-sm-60.ph-30.ph-sm-60.d-flex
+            .align-self-end
+              img.mb-60(src="img/pics/pic-100.svg", alt="" width=100)
+
+              p.mb-10= `11 Apr ${new Date().getFullYear()}`
+              h2.mb-40 Wireframe connects conceptual structure
+
+              .d-flex.align-items-center
+                img.mr-15(src="img/pics/user-round-50-white.svg")
+                div Author name

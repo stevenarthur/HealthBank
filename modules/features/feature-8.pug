@@ -1,0 +1,23 @@
+include ../common/common
+include contents
+
+mixin feature-8()
+  +main-section({ id: 8, partial: 'features' }).bg-iphone-right.pt-60.pt-lg-100.pb-20
+    h1.text-center.mb-40.mb-lg-110 Features
+
+    +row('around')
+      +col(['12', 'sm-6', 'lg-4'])
+        each item in featureItems8
+          +feature-8-item(item)
+      +col(['12', 'sm-6', 'lg-4'])
+
+
+//- PARTIALS
+mixin feature-8-item({ title, text })
+  .d-flex.mb-40.mb-lg-80
+    .mr-25
+      img(src="img/pics/check-54.svg" alt="")
+
+    div
+      h3.mb-10= title
+      p!= text

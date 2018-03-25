@@ -1,0 +1,40 @@
+include partials
+
+mixin footer-7()
+  +main-section({ id: 7, partial: 'footers' })
+    +row('center', 'stretch').p-40.p-lg-40
+      +col(['sm-8', 'lg-7']).text-center.text-sm-left
+        +row
+          +col(['12', 'sm-6']).mb-20.mb-sm-0
+            h3.mb-5 Hamburg
+            p +49 40 432 91 222
+            p
+              a(href="") hello@greatsimple.com
+            p Limpmannstrasse 79, 22769,
+            p Hamburg Germany
+
+          +col(['12', 'sm-6']).mb-20.mb-sm-0
+            h3.mb-5 Frankfurt
+            p +49 69 484 484 90
+            p
+              a(href="") hello@greatsimple.com
+            p Steinstrasse 11, 40212
+            p Düsseldorf, Germany
+
+      +col(['sm-4', 'lg-5']).text-center.text-sm-right.d-flex.flex-column.justify-content-between
+        .mb-15.mb-lg-0
+          .mb-5
+            a(href="") Menu One
+          .mb-5
+            a(href="") Menu Two
+
+        +row('end')
+          +col(['12', 'lg-auto']).mb-20.mb-lg-0
+            p &copy; 2016 Great Simple All rights reserved
+
+          +col(['12', 'lg-auto'])
+            +socials({
+              facebook: true,
+              twitter: true,
+              instagram: true
+            })

@@ -1,0 +1,30 @@
+include ../common/common
+include partials
+
+mixin header-14()
+  +main-section({ id: 14, partial: 'headers', isFluid: true }).bg-light.bg-devices
+    .ph-15.ph-sm-30.ph-lg-70.p-40
+      +row('between', 'center')
+        +col('auto')
+          +logo
+
+        +col('auto')
+          nav.navbar.d-none.d-lg-block
+            a(href="") Menu one
+            a(href="") Menu two
+            a(href="") Menu three
+            +button-small({ isLink: true })
+
+          nav.navbar.d-lg-none
+            +burger
+            +button-small({ isLink: true }).d-none.d-sm-inline-block
+
+    .container.text-center.text-lg-left.pt-30.pt-lg-120.pb-60.pb-lg-190
+      +row('center').justify-content-lg-start
+        +col(['12', 'sm-8', 'lg-6'])
+          h1.mb-20 Wireframe connects the  conceptual structure
+          h4.mb-30.
+            Far far away, behind the word mountains, far from the countries Vokalia
+            and Consonantia, there live the blind texts away
+
+          +button

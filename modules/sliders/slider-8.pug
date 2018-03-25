@@ -1,0 +1,36 @@
+include ../common/common
+include contents
+
+mixin slider-8()
+  +main-section({ id: 8, partial: 'sliders' }).text-center.p-60.p-lg-100
+    h1.mb-40.mb-lg-60 Slider
+
+    +row.slider.mb-40.mb-lg-60#slider-8-slider
+      each item in sliderItems8
+        +sliders-8-item(item)
+
+    +button
+
+  +sliders-8-script
+
+//- PARTIALS
+mixin sliders-8-item({ text })
+  +col(['12', 'sm-6', 'lg-3']).slider-item
+    .image.h-310.mb-20.pic-sm
+    p!= text
+
+//- SCRIPT
+mixin sliders-8-script()
+  script.
+    $("#slider-8-slider").flickity({
+      cellSelector: ".slider-item",
+      resize: true,
+      cellAlign: 'left',
+      contain: true,
+      imagesLoaded: true,
+      wrapAround: false,
+      adaptiveHeight: true,
+      pageDots: false,
+      groupCells: true,
+      prevNextButtons: true
+    })

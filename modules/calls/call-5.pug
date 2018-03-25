@@ -1,0 +1,25 @@
+include ../common/common
+include contents
+
+mixin call-5()
+  +main-section({ id: 5, partial: 'call-to-actions' }).text-center.pt-60.pt-lg-100.pb-40.pb-lg-80
+    +row('center')
+      +col(['12', 'sm-8', 'lg-6'])
+        h1.mb-20 Call to action
+        h4.mb-40.
+          The Big Oxmox advised her not to do so, because there were thousands of bad Commas
+
+        +button.mb-40.mb-sm-80
+        h5.mb-60.
+          Superpastar trusted and used by multiple companies
+
+    +row('between', 'center').no-gutters
+      each item in callLogogs5
+        +call-5-logo(item)
+
+
+//- PARTIALS
+mixin call-5-logo(path)
+  +col(['6', 'sm-4', 'lg-auto']).mb-20
+    a(href="")
+      img(src=path)

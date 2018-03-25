@@ -1,0 +1,49 @@
+.sliders
+  &.bg-macbook
+    +lg()
+      background url('../img/bg/macbook-full.svg') no-repeat
+      background-size 760px 439px
+      background-position calc(50% - 500px) center
+
+  .bg-iphone
+    padding 53px 0 62px
+    background #fff url('../img/bg/iphone-330-noscreen.svg') no-repeat
+    background-position center top
+    background-size: auto 462px
+
+    +sm()
+      padding 78px 0 90px
+      background-size: auto 670px
+
+  .iphone-screen
+    height 346px
+    width 200px
+    margin 0 auto
+    transition 0.5s ease background, 0.5s ease border
+    border 2px solid transparent
+
+    +sm()
+      height 502px
+      width 290px
+
+  .is-selected .iphone-screen
+    background-color #ffffff
+    border 1px solid Accent
+
+    +sm()
+      border 2px solid Accent
+
+  .slider-fluid
+    .slider-item
+      max-width calc(100% - 30px)
+      opacity 0.3
+      transition 0.5s ease opacity
+
+      +sm()
+        max-width 80%
+
+      +lg()
+        max-width 950px
+
+      &.is-selected
+        opacity 1

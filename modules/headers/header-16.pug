@@ -1,0 +1,17 @@
+include ../common/common
+include partials
+
+mixin header-16()
+  +main-section({ id: 16, partial: 'headers', isFluid: true })
+    .ph-15.ph-sm-30.ph-lg-70
+      +row('between', 'center').h-100
+        +col('auto')
+          +logo
+
+        +col('auto')
+          nav.navbar
+            a(href="") Ru
+            | /
+            a(href="") En
+            +burger
+

@@ -1,0 +1,21 @@
+include ../common/common
+include contents
+
+mixin feature-11()
+  +main-section({ id: 11, partial: 'features' }).bg-macbook-left.pt-60.pt-lg-100
+    h1.text-center.mb-40.mb-lg-80 Features
+
+    +row('end')
+      +col(['12', 'sm-6']).striked-vertical
+        each item, index in featureItems11
+          +feature-11-item(index, item)
+
+
+//- PARTIALS
+mixin feature-11-item(index, { title, text })
+  .d-flex.mb-60.mb-sm-120
+    .mr-15
+      .badge-round= index + 1
+    div
+      h3= title
+      p!= text

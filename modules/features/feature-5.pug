@@ -1,0 +1,19 @@
+include ../common/common
+include contents
+
+mixin feature-5()
+  +main-section({ id: 5, partial: 'features' }).text-center.p-60.p-lg-100
+    h1.mb-40.mb-lg-60 Features
+
+    +row
+      each item, index in featureItems5
+        +feature-5-item(item, index)
+
+    +button({ glyphicon: 'star' })
+
+//- PARTIALS
+mixin feature-5-item({ title, text }, index)
+  +col(['12', 'sm-4']).mb-40
+    .badge-round.mb-40=index+1
+    h3.mb-10= title
+    p!= text

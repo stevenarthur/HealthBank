@@ -1,0 +1,30 @@
+include ../common/common
+include partials
+
+mixin header-19()
+  +main-section({ id: 19, partial: 'headers', isFluid: true })
+    .ph-15.ph-sm-30.ph-lg-70
+      +row('between', 'center').jsustify-content-lg-start.h-100
+        +col('auto').d-flex.align-items-center
+          +logo
+
+        +col('auto').d-none.d-lg-block
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three', 'Menu four'])
+
+        +col('auto').d-flex.align-items-center
+          nav.navbar.d-lg-none.mr-0
+            +burger
+
+          .dropdown.dropdown-right
+            a(href="" id="headers-19-dropdown" data-toggle="dropdown")
+              span.d-flex.align-items-center
+                span
+                  img(src="img/pics/user-round-50.svg")
+                span.d-none.d-sm-block.ml-30 User
+
+            ul.dropdown-menu(aria-labelledby="headers-19-dropdown")
+              a(href="") Submenu one
+              a(href="") Submenu two
+              a(href="") Submenu three
+              .dropdown-divider
+              a(href="") Submenu four

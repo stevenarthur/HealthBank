@@ -1,0 +1,32 @@
+include ../common/common
+include contents
+
+mixin blog-16()
+  +main-section({ id: 16,  partial: 'blogs' }).pt-60.pt-lg-100.pb-45.pb-sm-60.pb-lg-70
+    h1.text-center.mb-60 Blog
+
+    +row
+      +col(['12', 'lg-6'])
+        +row
+          each item in blogItems16
+            +blog-16-item(item)
+
+      +col(['12', 'lg-6'])
+        +row
+          each item in blogItems16.reverse()
+            +blog-16-item(item)
+
+
+//- PARTIALS
+mixin blog-16-item({ title, text, isWild })
+  +col(isWild ? '12' : ['12', 'sm-6'])(class=(isWild ? "text-center" : null)).mb-15.mb-sm-30
+    .ratio-1-1
+      .panel.d-flex
+        .align-self-center.ph-30
+          if isWild
+            img.mb-40(src="img/pics/pic-100.svg" alt="" width="100")
+            h2.mb-15= title
+          else
+            h3= title
+          p.mb-30!= text
+          a.arrow.b-500(href="") Read more

@@ -1,0 +1,29 @@
+include ../common/common
+include contents
+
+mixin content-15()
+  +main-section({ id: 15, partial: 'contents' }).bg-iphone-left.text-center.text-lg-left.pt-60.pt-lg-100.pb-50.pb-lg-90
+    +row
+      +col(['12', 'lg-6'])
+      +col(['12', 'lg-5']).p-30.p-lg-70
+        img.mb-40(src="img/star.svg", alt="")
+
+        h1.mb-20 Platforma Kit
+        h4.mb-40.
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts
+
+        +row('center', 'start').justify-content-lg-start
+          each item in contentButtons15
+            +content-15-button(item)
+
+
+//- PARTIALS
+mixin content-15-button(path)
+  +col(['12', 'sm-auto']).mb-10
+    a(href="#")
+      img(src=path alt="")
+
+
+
+

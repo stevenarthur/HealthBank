@@ -1,0 +1,29 @@
+include ../common/common
+include contents
+
+mixin testimonials-7()
+  +main-section({ id: 2, partial: 'testimonials' }).text-center.p-60.p-lg-100
+    .sliderw(id="testimonials-7-slider")
+      each item in testimonialsItems7
+        +testimonials-7-slider-item(item)
+
+    script.
+      $('#testimonials-7-slider').flickity({
+        pageDots: false,
+        cellAlign: 'left'
+      })
+
+
+//- PARTIALS
+mixin testimonials-7-slider-item({ name, text })
+  .slider-item.text-left
+    +row
+      +col(['12', 'sm-3', 'lg-2']).mb-30.mb-sm-0
+        img.image(src="img/img-square.png" alt="").userpic-sm
+
+      +col(['12', 'sm-9', 'lg-10'])
+        .pl-sm-40
+          h4.mb-30!= text
+
+          h3= name
+          p Position, Company

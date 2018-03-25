@@ -1,0 +1,20 @@
+include ../common/common
+include contents
+
+mixin testimonials-13()
+  +main-section({ id: 13, partial: 'testimonials' }).text-center.pt-60.pt-lg-100.pb-0.pb-lg-40
+    h1.mb-40.mb-lg-80 Testimonials
+
+    +row
+      each item in testimonialsItems13
+        +testimonials-13-item(item)
+
+//- PARTIALS
+mixin testimonials-13-item({ name, text })
+  +col(['12', 'sm-4']).mb-60
+    .ph-lg-30
+      p.mb-40!= text
+
+      img.mb-20(src="img/pics/user-round-50.svg")
+      h5= name
+      p Position

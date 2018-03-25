@@ -1,0 +1,22 @@
+include ../common/common
+
+mixin feature-17()
+  +main-section({ id: 17, partial: 'features' }).p-60.p-lg-100.text-center
+    h1.mb-40 Wireframe connects the underlying conceptual structure
+
+    .feature-tooltips.text-left
+      img.feature-tablet(src="img/bg/ipad-full.svg", alt="")
+      +feature-tooltip('10%', '16%', 1)
+      +feature-tooltip('91%', '32%', 2)
+      +feature-tooltip('19%', '75%', 3)
+      +feature-tooltip('76%', '93%', 4)
+
+
+//- PARTIALS
+mixin feature-tooltip(left = 0, top = 0, index)
+  .icon-feature(style=`left: ${left}; top: ${top}`)
+  .feature-tooltip(class=`tooltip-${index}`)
+    .feature-tooltip-overlay
+      .inner
+        h3 First Option
+        p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia

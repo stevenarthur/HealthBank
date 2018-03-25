@@ -1,0 +1,19 @@
+include ../common/common
+include contents
+
+mixin grid-8()
+  +main-section({ id: 8, partial: 'grids' }).text-center.pt-60.pt-lg-100.pb-45.pb-sm-30.pb-lg-70
+    h1.mb-40.text-center Platforma Wireframe Kit
+
+    +row
+      +col(['12', 'sm-6']).mb-15.mb-sm-30
+        .ratio-1-1
+          .image.pic-lg
+
+      +col(['12', 'sm-6']).mb-15.mb-sm-30
+        .ratio-1-1
+          .image.pic-lg
+
+      +col(['12']).mb-15.mb-sm-30
+        .ratio-2-1
+          .image.pic-lg

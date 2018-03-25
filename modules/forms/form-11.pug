@@ -1,0 +1,44 @@
+include ../common/common
+
+mixin form-11()
+  +main-section({ id: 11, partial: 'forms' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'lg-8'])
+        h1.mb-20 Registration
+        p.mb-30 continue with
+
+        +row.mb-10
+          +col(['12', 'sm-6']).mb-20
+            +button({ icon: 'facebook', text: 'Sign up with Facebook' }).w-full.no-padding
+          +col(['12', 'sm-6']).mb-20
+            +button({ icon: 'twitter', text: 'Sign up with Twitter' }).w-full.no-padding
+
+        p.b-500.mb-30 or
+
+        form.mb-60
+          +row
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+
+          +row.mb-20
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+
+          label.checkbox.mb-40
+            input(type="checkbox")
+            .check-pointer
+            .checkbox-label Far far away, behind the word mountains
+
+          +row('center')
+            +col(['12', 'sm-6'])
+              +button.w-full.no-padding
+
+        +row('center')
+          +col(['12', 'sm-8'])
+            p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+
+

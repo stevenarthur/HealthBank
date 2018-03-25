@@ -1,0 +1,21 @@
+include ../common/common
+include contents
+
+mixin feature-15()
+  +main-section({ id: 15, partial: 'features' }).bg-iphone-right-top.pt-60.pt-lg-100.pb-0.pb-lg-40.text-center.text-sm-left
+    +row
+      +col(['12', 'sm-6', 'lg-5']).p-lg-100
+        h1.mb-60 Features
+        each item, index in featureItems15
+          +feature-15-item(item, index)
+
+
+//- PARTIALS
+mixin feature-15-item({ title, text }, index)
+  .d-flex.mb-60.text-left
+    .mr-25
+      .badge-round= index+1
+
+    div
+      h3= title
+      p!= text

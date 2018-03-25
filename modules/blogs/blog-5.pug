@@ -1,0 +1,35 @@
+include ../common/common
+include contents
+
+mixin blog-5()
+  +main-section({ id: 5,  partial: 'blogs' }).text-center.p-60.p-lg-100
+    h1.mb-60 Blog
+
+    +row.slider.mb-60(id="blogs-5-slider")
+      each item in blogItems5
+        +blog-5-item(item)
+
+    +button-small()
+
+    script.
+      $("#blogs-5-slider").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'left',
+        contain: true,
+        imagesLoaded: true,
+        wrapAround: false,
+        adaptiveHeight: true,
+        pageDots: false,
+        groupCells: true,
+        prevNextButtons: true
+      })
+
+//- PARTIALS
+mixin blog-5-item({ date, title, text })
+  +col(['12', 'sm-6', 'lg-4']).slider-item
+    .card.p-30.p-lg-60.ph-15.ph-lg-30
+      p.mb-10= date
+      h2.mb-15= title
+      p.mb-50!= text
+      a.b-500.arrow(href="") Read more

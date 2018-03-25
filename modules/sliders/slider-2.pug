@@ -1,0 +1,33 @@
+include ../common/common
+include contents
+
+mixin slider-2()
+  +main-section({ id: 2, partial: 'sliders' }).bg-macbook.text-center.text-lg-left.p-60.p-lg-100
+    +row('end')
+      +col(['12', 'lg-6']).p-0.p-lg-70
+        .slider.slider-slim(id="sliders-2-slider")
+          each item in sliderItems2
+            +sliders-2-item(item)
+
+  script.
+    $("#sliders-2-slider").flickity({
+      cellSelector: ".slider-item",
+      resize: true,
+      cellAlign: 'left',
+      contain: true,
+      imagesLoaded: true,
+      wrapAround: false,
+      adaptiveHeight: true,
+      pageDots: true,
+      groupCells: false,
+      prevNextButtons: true
+    })
+
+
+//- PARTIALS
+mixin sliders-2-item({ title, text })
+  .slider-item
+    h1.mb-20= title
+    h4.mb-60!= text
+    a.b-500.arrow(href="") Learn more
+

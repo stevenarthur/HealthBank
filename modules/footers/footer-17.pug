@@ -1,0 +1,30 @@
+include partials
+
+mixin footer-17()
+  +main-section({ id: 17, partial: 'footers' }).text-center.text-sm-left
+    .bb.p-70.text-center
+      +row('center')
+        +col(['12', 'sm-10', 'lg-6'])
+          h4.
+            Far far away, behind the word mountains, far from the
+            countries Vokalia and Consonantia, there live the blind texts.
+
+    +row('between', 'center').p-40
+      +col(['12', 'sm-3']).mb-20.mb-sm-0
+        +logo
+
+      +col(['12', 'sm-6']).text-center.mb-30.mb-sm-0
+        nav.navbar
+          a(href="") Menu One
+          a(href="") Menu Two
+          a(href="") Menu Three
+          a(href="") Menu Four
+          a(href="") Menu Five
+
+      +col(['12', 'sm-3']).text-center.text-sm-right
+        +socials({
+          google: true,
+          facebook: true,
+          twitter: true
+        })
+

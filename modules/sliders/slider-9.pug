@@ -1,0 +1,43 @@
+include ../common/common
+include contents
+
+mixin slider-9()
+  +main-section({ id: 9, partial: 'sliders' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-8', 'lg-6'])
+        h1.mb-20 Platforma wireframe
+        h4.mb-60.
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts
+
+    +row.slider.bg-iphone(id="slider-9-slider")
+      each item in sliderScreens9
+        +sliders-9-item()
+
+  +sliders-9-script
+
+
+//- PARTIALS
+mixin sliders-9-item()
+  +col(['12', 'lg-4']).slider-item
+    .image.iphone-screen.pic-md
+
+//- SCRIPTS
+mixin sliders-9-script()
+  script.
+    var slidersSlider9 = $("#slider-9-slider").flickity({
+      cellSelector: ".slider-item",
+      resize: true,
+      cellAlign: 'center',
+      contain: false,
+      imagesLoaded: true,
+      wrapAround: true,
+      adaptiveHeight: true,
+      pageDots: false,
+      groupCells: false,
+      prevNextButtons: true
+    });
+
+    slidersSlider9.find('.slider-item').on('click', function() {
+      slidersSlider9.flickity('select', $(this).index());
+    });

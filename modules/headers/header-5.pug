@@ -1,0 +1,26 @@
+include ../common/common
+include partials
+
+mixin header-5()
+  +main-section({ id: 5, partial: 'headers', isFluid: true }).bg-light.pb-60.pb-sm-80.pb-lg-240
+    .ph-15.ph-sm-30.ph-lg-70.p-40.mb-30.mb-lg-150
+      +row('between', 'center')
+        +col(['2', 'sm-4'])
+          nav.navbar.d-lg-none
+            +burger
+
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three']).d-none.d-lg-block
+
+        +col('auto')
+          +logo
+
+        +col(['2', 'sm-4']).text-right.d-none.d-sm-block
+          nav.navbar
+            a(href="") Link
+            +button-small({ isLink: true })
+
+    .container
+      +row('center').text-center
+        +col(['12', 'sm-10', 'lg-8'])
+          h1.mb-40 Wireframe connects the underlying conceptual structure
+          +button({ glyphicon: 'star' })

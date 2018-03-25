@@ -1,0 +1,43 @@
+include ../common/common
+include contents
+
+mixin testimonials-5()
+  +main-section({ id: 5, partial: 'testimonials' }).p-60.p-lg-100
+    +row('center').mb-60
+      +col(['12'])
+        +row.slider.slider-subnav(id="testimonials-5-nav")
+          each item in testimonialsItems5
+            +testimonials-5-nav-item(item)
+
+    +row.slider.text-center(id="testimonials-5-slider")
+      each item in testimonialsItems5
+        +testimonials-5-item(item)
+
+
+    script.
+      $('#testimonials-5-slider').flickity({
+        pageDots: false,
+        cellSelector: ".slider-item"
+      })
+
+      $('#testimonials-5-nav').flickity({
+        asNavFor: '#testimonials-5-slider',
+        pageDots: false,
+        contain: true,
+        prevNextButtons: false
+      })
+
+
+//- PARTIALS
+mixin testimonials-5-item({ name, text })
+  +col('12').slider-item
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        h4.mb-50!= text
+
+        h3= name
+        p Position, Company
+
+mixin testimonials-5-nav-item({ image })
+  +col(['6', 'sm-3', 'lg-2']).slider-item.h-40.d-flex.justify-content-center
+    img(src=`img/logos/${image}`)

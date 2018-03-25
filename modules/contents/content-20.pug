@@ -1,0 +1,16 @@
+include ../common/common
+
+mixin content-20()
+  +main-section({ id: 20, partial: 'contents', isFluid: true }).text-center
+    +row('between', 'center').no-gutters
+      +col(['12', 'lg-6']).bg-light
+        .image.h-50v.pic-lg
+
+      +col(['12', 'lg-6'])
+        .p-50.p-lg-60.ph-15.ph-sm-100
+          h1.mb-20 Platforma wireframe
+          h4.mb-70.
+            When she reached the first hills of the Italic Mountains, she had
+            a last view back on the skyline of her hometown Bookmarksgrove
+
+          a.arrow.b-500(href="") Learn more

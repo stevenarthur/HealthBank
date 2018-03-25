@@ -1,0 +1,37 @@
+include ../common/common
+include contents
+
+mixin slider-5()
+  +main-section({ id: 5, partial: 'sliders' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        .slider.mb-40.mb-lg-60(id="slider-5-slider")
+          each item in sliderItems5
+            +sliders-5-item(item)
+
+        h2.mb-20 Platforma Wireframe Kit
+        p.
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the
+          Semantics, a large language ocean
+
+  script.
+    $("#slider-5-slider").flickity({
+      cellSelector:    ".slider-item",
+      cellAlign:       'center',
+      pageDots:        false,
+      groupCells:      false,
+      resize:          true,
+      contain:         true,
+      imagesLoaded:    true,
+      wrapAround:      true,
+      adaptiveHeight:  true,
+      prevNextButtons: true
+    })
+
+
+//- PARTIALS
+mixin sliders-5-item()
+  +col.slider-item
+    .video
+      img.image(src="img/img-16-9.png" alt="")

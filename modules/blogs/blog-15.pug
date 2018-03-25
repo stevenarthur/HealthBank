@@ -1,0 +1,28 @@
+include ../common/common
+include contents
+
+mixin blog-15()
+  +main-section({ id: 1,  partial: 'blogs' }).pt-30.pt-lg-70.pb-60.pb-lg-100
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        .comments.mb-30
+          each item in blogComments15
+            +blog-15-comment(item)
+
+        +row.no-gutters.form-group
+          +col(['8', 'sm-10'])
+            +input({ isLight: true })
+          +col(['4', 'sm-2'])
+            +button().w-full
+
+
+//- PARTIALS
+mixin blog-15-comment({ name, time, text })
+  .d-flex.p-30
+    .mr-15
+      img(src="img/pics/user-round-50.svg")
+    div
+      .mb-15
+        span.b-500.mr-10= name
+        span= time
+      p!= text

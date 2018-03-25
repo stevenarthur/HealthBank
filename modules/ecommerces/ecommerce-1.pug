@@ -1,0 +1,61 @@
+include ../common/common
+include contents
+
+mixin ecommerce-1()
+  +main-section({ id: 1, partial: 'ecommerces' }).p-60.p-lg-100.text-center
+    h1 Products
+
+    ul.nav-tabs.mb-40(id="ecommerces-tabs")
+      each item, index in ecommerceItems1
+        +ecommerce-1-tab(item, index)
+
+    .tabs-content.mb-30(id="ecommerces-1-tabs")
+      each item, index in ecommerceItems1
+        +ecommerce-1-tab-panel(item, index)
+
+    a(href="#more")
+      span.glyphicon.glyphicon-star.icon-margin-right
+      span.b-500 More new arrivals
+
+    script.
+      $('#ecommerces-1-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+
+
+//- PARTIALS
+mixin ecommerce-1-tab({ tab }, index)
+  li(class= (index === 0 ? "active": null))
+    a(href=`#ecommerce-1-tab-${index}` data-toggle="tab")=tab
+
+mixin ecommerce-1-item({ title, description, price, isWild })
+  if isWild
+    +col(['12', 'sm-12', 'lg-6']).mb-15.mb-sm-30
+      .card.h-400.d-flex.justify-content-center
+        .align-self-center.ph-30
+          h1.mb-20= title
+          h4.mb-50= description
+          +button-small
+  else
+    +col(['12', 'sm-6', 'lg-3']).mb-15.mb-sm-30
+      .panel.h-400.with-overlay.p-30.d-flex.justify-content-center
+        .align-self-end
+          img.mb-120(src="img/pics/pic-100.svg" alt="")
+          h3= title
+          p= `$${price}`
+
+        .with-overlay__content.d-flex.justify-content-center
+          .align-self-center.ph-30
+            h3.mb-10= title
+            p.mb-20= description
+            p.mb-60= `$${price}`
+            +button-small
+
+mixin ecommerce-1-tab-panel({ items }, index)
+  .tab-panel(id=`ecommerce-1-tab-${index}` class= (index === 0 ? "active": null))
+    +row
+      each item in items
+        +ecommerce-1-item(item)
+
+

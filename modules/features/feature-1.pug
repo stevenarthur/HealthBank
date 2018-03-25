@@ -1,0 +1,18 @@
+include ../common/common
+include contents
+
+mixin feature-1()
+  +main-section({ id: 1, partial: 'features' }).text-center.pt-60.pt-lg-100.pb-20.pb-lg-60
+    h1.mb-40.mb-lg-60 Features
+
+    +row
+      each item in featureItems1
+        +feature-1-item(item)
+
+
+//- PARTIALS
+mixin feature-1-item({ title, text })
+  +col(['12', 'sm-4']).mb-40
+    img.m-auto.mb-20(src="img/pics/check-54.svg"  alt="")
+    h3.mb-10= title
+    p!= text

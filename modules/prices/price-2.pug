@@ -1,0 +1,23 @@
+include ../common/common
+include contents
+
+mixin price-2()
+  +main-section({ id: 2, partial: 'prices' }).text-center.pt-60.pt-lg-100.pb-45.pb-lg-85
+    h1.mb-60 Pricing tables
+
+    +row
+      each item in priceItems2
+        +price-2-item(item)
+
+
+//- PARTIALS
+mixin price-2-item({ title, text, price })
+  +col(['12', 'sm-4']).mb-15
+    .card.p-30.ph-30.d-flex.flex-column.justify-content-between
+      .mb-30
+        h3.mb-10= title
+        p!= text
+
+      div
+        p.mb-30= price
+        +button-small.w-full

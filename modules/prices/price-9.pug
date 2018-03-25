@@ -1,0 +1,25 @@
+include ../common/common
+include contents
+
+mixin price-9()
+  +main-section({ id: '9', partial: 'prices' }).text-center.pt-60.pt-lg-100.pb-45.pb-lg-85
+    h1.mb-60 Prices
+
+    +row
+      each item in priceItems9
+        +price-9-item(item)
+
+
+//- PARTIALS
+mixin price-9-item({ title, price, items })
+  +col(['12', 'sm-4']).mb-15
+    .card.p-30.ph-30.d-flex.flex-column.justify-content-between
+      div
+        h5.mb-10= title
+        h1.mb-30= `$${price}`
+        h4.mb-40
+          each item in items
+            div= item
+
+      div
+        +button-small.w-full

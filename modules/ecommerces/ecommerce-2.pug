@@ -1,0 +1,30 @@
+include ../common/common
+include contents
+
+mixin ecommerce-2()
+  +main-section({ id: 2, partial: 'ecommerces' }).p-60.p-lg-100.text-center
+    h1.mb-60 Products
+
+    +row.mb-30
+      each item in ecommerceItems2
+        +ecommerce-2-item(item)
+
+    a.b-500(href="")
+      span.icon-20.glyphicon.glyphicon-star
+      span All items
+
+
+//- PARTIALS
+mixin ecommerce-2-item({ title, price })
+  +col(['12', 'sm-6']).mb-15.mb-sm-30
+    .panel.ratio-1-1
+      .d-flex.justify-content-center
+        .align-self-center.p-30
+          img.mb-20.mb-lg-70(src="img/pics/pic-140.svg" alt="")
+          h2.mb-20= title
+          .colors.mb-20
+            span.bg-accent-dark
+            span.bg-accent
+            span.bg-white
+
+          p= `$${price}`

@@ -1,0 +1,50 @@
+include ../common/common
+include contents
+
+mixin portfolio-2()
+ +main-section({ id: 2, partial: 'portfolio' }).text-center.p-60.p-lg-100
+    +row
+      +col
+        h1.mb-40 Portfolio
+
+        ul.nav.nav-tabs.mb-40#p2-tabs
+          each item, index in portfolioItems2
+            +portfolio-2-tab(item, index)
+
+        .tabs-content.mb-30
+          each item, index in portfolioItems2
+            +portfolio-2-item(item, index)
+
+        a.b-500(href="")
+          span.icon.icon-star
+          span All items
+
+    script.
+      $('p2-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+
+
+//- PARTIALS
+mixin portfolio-2-tab({ tab }, index)
+  li(class= (index == 0) ? 'active' : null )
+    a(href=`#tab${index}` data-toggle="tab")= tab
+
+mixin portfolio-2-item({ items }, index)
+  .tab-panel(id=`tab${index}`, class= (index == 0) ? 'active' : null)
+    +row('center', 'stretch')
+      each item in items
+        +col(item.isWild ? ['12'] : ['12', 'sm-6']).mb-15.mb-sm-30
+          .bg-light.ph-15(class= item.isWild ? 'p-100 p-sm-130' : 'p-60 p-lg-100')
+            if item.isWild
+              h1.mb-20= item.title
+            else
+              h2.mb-20= item.title
+            p.
+              Far far away, behind the word mountains,<br> far from the countries Vokalia and Consonantia
+
+            if item.isWild
+              .mt-60
+                a.rounded-arrow(href="")
+                  .icon.icon-circle-arrow

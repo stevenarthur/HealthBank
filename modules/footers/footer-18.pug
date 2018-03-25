@@ -1,0 +1,31 @@
+include partials
+
+mixin footer-18()
+  +main-section({ id: 18, partial: 'footers' }).text-center.text-sm-left
+    .bb
+      +row('between', 'center').p-40
+        +col(['12', 'sm-auto']).mb-20.mb-sm-0
+          +logo
+
+        +col(['12', 'sm-auto'])
+          nav.navbar
+            a(href="") Menu One
+            a(href="") Menu Two
+            a(href="") Menu Three
+
+    +row('between', 'center').p-30
+      +col(['12', 'sm-auto']).mb-20.mb-sm-0
+        +socials({
+            google: true,
+            facebook: true,
+            twitter: true,
+            instagram: true,
+            behance: true
+          })
+
+      +col(['12', 'sm-auto'])
+        p.navbar
+          a(href="") Menu One
+          a(href="") Menu Two
+          a(href="") Menu Three
+          a(href="") Menu Four

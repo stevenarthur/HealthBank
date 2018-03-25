@@ -1,0 +1,34 @@
+include ../common/common
+include contents
+
+mixin slider-4()
+  +main-section({ id: 4, partial: 'sliders' }).text-center.p-60.p-lg-100
+    h1.mb-40.mb-lg-60 Slider
+
+    +row('center').mb-80
+      +col(['12', 'sm-10', 'lg-8'])
+        .slider.slider-stick-dots(id="sliders-4-slider")
+          each item in sliderItems4
+            +slider-4-item()
+
+    +button
+
+  script.
+    $("#sliders-4-slider").flickity({
+      cellSelector: ".slider-item",
+      resize: true,
+      cellAlign: 'center',
+      contain: true,
+      imagesLoaded: true,
+      wrapAround: true,
+      adaptiveHeight: true,
+      pageDots: true,
+      groupCells: false,
+      prevNextButtons: true
+    })
+
+
+//- PARTIALS
+mixin slider-4-item()
+  +col.slider-item
+    img.image(src="img/img-16-9.png" alt="").pic-md

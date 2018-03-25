@@ -1,0 +1,23 @@
+include ../common/common
+
+mixin contacts-7()
+  +main-section({ id: 7, partial: 'contacts', isFluid: true }).text-center.text-sm-left
+    +row('center', 'stretch').h-50v.no-gutters
+      +col(['12', 'sm-6']).bg-square-map.h-50v
+        .baloon
+          .mb-10
+            p Saint-Petersburg,
+            p 191186 Millionnaya st. 29
+
+          p
+            a(href="mailto:") hello@greatsimple.io
+          p +1 222-345-0000
+
+      +col(['12', 'sm-6']).d-flex
+        +col.align-self-center
+          .p-60.p-lg-100.ph-sm-40.ph-lg-90
+            h1.mb-40 Write us
+            +input({ isLight: true })(type="text" placeholder="Input").mb-20
+            +input({ isLight: true })(type="text" placeholder="Input").mb-20
+            +textarea({ isLight: true })(rows="9").mb-20
+            +button-small

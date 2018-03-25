@@ -1,0 +1,33 @@
+include ../common/common
+
+mixin contacts-8()
+  +main-section({ id: 8, partial: 'contacts' }).text-center.text-sm-left.p-60.p-lg-100
+    +row('between')
+      +col(['12', 'sm-6', 'lg-5'])
+        h1.mb-20 Contacts
+        p.
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+          there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+          a large language ocean.
+
+      +col(['12', 'sm-6']).pt-60
+        +row
+          +col(['12', 'lg-6']).mb-40.mb-lg-0
+            .mb-20
+              p
+                a(href="mailto:") hello@greatsimple.io
+              p +1 222-345-0000
+
+            p Saint-Petersburg,
+            p 191186 Millionnaya st. 29
+
+          +col(['12', 'lg-6'])
+            h5.mb-15 Follow us
+
+            +socials({
+              google: true,
+              facebook: true,
+              twitter: true,
+              instagram: true,
+              behance: true
+            })

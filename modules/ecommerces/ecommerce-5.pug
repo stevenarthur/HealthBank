@@ -1,0 +1,56 @@
+include ../common/common
+include contents
+
+mixin ecommerce-5()
+  +main-section({ id: 5, partial: 'ecommerces' }).p-60.p-lg-100
+    +row('center').justify-content-lg-between
+      +col(['12', 'sm-10', 'lg-5']).order-2.order-lg-1
+        h1.mb-20 Item one
+        .mb-30 $399 (Ex. Tax)
+
+        ul.nav-tabs(id="ecommerce-5-tabs")
+          each item, index in ecommerceTabs5
+            +ecommerce-5-tab(item, index)
+
+        .tabs-content.mb-40
+          each item, index in ecommerceTabs5
+            +ecommerce-5-tab-panel(item, index)
+
+        +row
+          +col(['12', 'sm-10'])
+            .mb-40
+              each item in ecommerceAdditionals5
+                +row('between').no-gutters.additional-row
+                  +col('auto')
+                    p= item.title
+                  +col('auto')
+                    b-500= item.value
+
+        +button
+
+      +col(['12', 'sm-10', 'lg-6']).order-1.order-lg-2.mb-40.mb-lg-0
+        img.image.mb-10.mb-sm-30(src="img/img-square.png" alt="").pic-lg
+
+        .d-flex.ml--5.mr--5.ml-sm--15.mr-sm--15
+          each item in ecommerceImages5
+            +ecommerce-5-thumb
+
+    script.
+      $('#ec5-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+
+
+//- PARTIALS
+mixin ecommerce-5-tab({ tab }, index)
+  li(class= (index === 0 ? "active": null))
+    a(href=`#ecommerce-5-tab-${index}` data-toggle="tab")=tab
+
+mixin ecommerce-5-tab-panel({ text }, index)
+  .tab-panel(id=`ecommerce-5-tab-${index}` class=(index === 0 ? "active" : null))
+    p!= text
+
+mixin ecommerce-5-thumb()
+  .ph-5.ph-sm-15
+    img.image(src="img/img-square.png" alt="").pic-sm

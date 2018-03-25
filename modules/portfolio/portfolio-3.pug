@@ -1,0 +1,22 @@
+include ../common/common
+include contents
+
+mixin portfolio-3()
+  +main-section({ id: 3, partial: 'portfolio' }).text-center.pt-60.pt-lg-100.pb-45.pt-sm-30.pb-lg-70
+    +row
+      +col
+        h1.mb-40 Portfolio
+
+    +row
+      each item in portfolioItems3
+        +portfolio-3-item(item)
+
+
+//- PARTIALS
+mixin portfolio-3-item({ title, text })
+  +col(['12', 'sm-6', 'lg-4']).mb-15.mb-sm-30
+    .card
+      img.image(src="img/img-4-3.png").pic-md
+      .p-30.ph-30
+        h3.mb-10= title
+        p!= text

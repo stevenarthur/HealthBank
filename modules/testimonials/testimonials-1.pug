@@ -1,0 +1,52 @@
+include ../common/common
+include contents
+
+mixin testimonials-1()
+  +main-section({ id: 1, partial: 'testimonials', isFluid: true }).text-center.p-60.p-lg-100
+    .container
+      h1.mb-60 Testimonials
+
+    .sldier.slider-fluid.text-left(id="testimonials-1-slider")
+      each item in testimonialsItems1
+        +testimonials-1-item(item)
+
+    script.
+      var t1slider = $("#testimonials-1-slider").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'center',
+        contain: false,
+        imagesLoaded: true,
+        wrapAround: true,
+        adaptiveHeight: true,
+        pageDots: false,
+        groupCells: false,
+        prevNextButtons: true
+      });
+
+      t1slider.find('.slider-item').on('click', function() {
+        t1slider.flickity('select', $(this).index());
+      });
+
+
+//- PARTIALS
+mixin testimonials-1-item({ title, text, date })
+  .slider-item
+    .card.p-50.ph-50
+      +row('between').mb-30
+        +col(['12', 'sm-6'])
+          h3
+            span.slider-skeleton= title
+          p
+            span.slider-skeleton= date
+
+        +col(['12', 'sm-auto'])
+          .rating-stars
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star.disabled-star
+
+      p
+        span.slider-skeleton!= text

@@ -1,0 +1,28 @@
+include ../common/common
+include contents
+
+mixin price-5()
+  +main-section({ id: '5', partial: 'prices' }).pt-60.pt-lg-100.pb-45.pb-sm-30.pt-lg-70
+    h1.text-center.mb-60 Pricing table
+
+    +row
+      each item in priceItems5
+        +price-5-item(item)
+
+
+//- PARTIALS
+mixin price-5-item({ title, price, items })
+  +col(['12', 'sm-6', 'lg-3']).mb-15.mb-sm-30
+    .card
+      .bb.text-center.p-30.mb-20
+        h3.mb-15= title
+        h1.mb-5= `$${price}`
+        p per month
+
+      .ph-30
+        each row in items
+          +row('between').mb-20
+            +col('auto')
+              p= row.title
+            +col('auto')
+              .b-500= row.value

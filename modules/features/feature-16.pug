@@ -1,0 +1,32 @@
+include ../common/common
+
+mixin feature-16()
+  +main-section({ id: 16, partial: 'features' }).pt-60.pt-lg-100.pb-20.pb-lg-60.text-center
+    h1.text-center.mb-40 Wireframe connects the underlying conceptual structure
+
+    img.feature-tablet.mb-90(src="img/bg/ipad-full.svg", alt="")
+
+    +row('center').text-left
+      +col(['12', 'sm-6', 'lg-5']).mb-40
+        .d-flex
+          .mr-25
+            img(src="img/pics/star-54.svg" alt="")
+
+          div
+            h2 First option
+            p.
+              Far far away, behind the word mountains,
+              far from the countries Vokalia and Consonantia,
+              there live the blind texts
+
+      +col(['12', 'sm-6', 'lg-5']).mb-40
+        .d-flex
+          .mr-25
+            img(src="img/pics/star-54.svg" alt="")
+
+          div
+            h2 Second option
+            p.
+              Far far away, behind the word mountains,
+              far from the countries Vokalia and Consonantia,
+              there live the blind texts

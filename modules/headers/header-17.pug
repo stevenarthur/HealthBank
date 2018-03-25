@@ -1,0 +1,22 @@
+include ../common/common
+include partials
+
+mixin header-17()
+  +main-section({ id: 17, partial: 'headers', isFluid: true })
+    .ph-15.ph-sm-30.ph-lg-70
+      +row('between', 'center').h-100
+        +col(['2', 'sm-auto'])
+          +logo
+
+        +col('auto')
+          nav.navbar.d-lg-none
+            +burger
+
+          +horizontal-menu(['Menu one', 'Menu two', 'Menu three', 'Menu four']).d-none.d-lg-block
+
+        +col(['2', 'sm-auto']).d-none.d-sm-block
+          +socials({
+            twitter: true,
+            instagram: true,
+            behance: true
+          })

@@ -1,0 +1,41 @@
+include partials
+
+mixin footer-16()
+  +main-section({ id: 16, partial: 'footers' }).text-center.text-sm-left.p-40
+    +row
+      +col(['12', 'lg-3']).text-center.text-lg-left.mb-40
+        +logo
+
+      +col(['12', 'lg-9'])
+        +row
+          +col(['6', 'sm-3']).mb-40.mb-sm-0
+            h5.mb-20 First
+            .mb-5
+              a(href="") Menu One
+            .mb-5
+              a(href="") Menu Two
+            .mb-5
+              a(href="") Menu Three
+
+          +col(['6', 'sm-3']).mb-40.mb-sm-0
+            h5.mb-20 Second
+            .mb-5
+              a(href="") Menu One
+            .mb-5
+              a(href="") Menu Two
+            .mb-5
+              a(href="") Menu Three
+
+          +col(['12', 'sm-3', 'lg-2']).mb-40.mb-sm-0
+            h5.mb-20 Follow us
+            +socials({
+              facebook: true,
+              twitter: true,
+              instagram: true
+            })
+
+          +col(['12', 'sm-3', 'lg-4']).mb-40.mb-sm-0
+            h5.mb-20 Subscribe
+            form
+              +input({ isLight: true, isSmall: true, icon: 'arrow-right' })(type="text" placeholder="Input")
+

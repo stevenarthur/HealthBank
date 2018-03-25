@@ -1,0 +1,20 @@
+include ../common/common
+include contents
+
+mixin team-1()
+  +main-section({ id: 1, partial: 'teams' }).pt-60.pt-lg-100.pb-20.pb-lg-40.text-center
+    +row
+      +col
+        h1.mb-40.mb-lg-60 Team
+    +row('between')
+      each item in teamsPeople1
+        +team-1-person(item)
+
+
+//- PARTIALS
+mixin team-1-person({ name, text })
+  +col(['12', 'sm-6', 'lg-4']).mb-40.mb-lg-60
+    img.image.mb-20(src="img/img-4-3.png" alt="").userpic-md
+    h3= name
+    p.mb-15 Position
+    p!= text

@@ -1,0 +1,19 @@
+include partials
+
+mixin footer-14()
+  +main-section({ id: 14, partial: 'footers', isFluid: true }).text-center
+    .bb
+      .container.p-40
+        a(class="map-link" href="")
+          span.icon.icon-pin
+          span Find us on the map
+
+    .container.p-40
+      +socials({
+        google: true,
+        facebook: true,
+        twitter: true,
+        instagram: true,
+        behance: true
+      }).mb-30
+      p &copy; 2016 Great Simple All rights reserved

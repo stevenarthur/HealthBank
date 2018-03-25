@@ -1,0 +1,75 @@
+include ../common/common
+include contents
+
+mixin ecommerce-3()
+  +main-section({ id: 3, partial: 'ecommerces' }).p-60.p-lg-100
+    +row('center', 'center').justify-content-lg-between
+      +col(['12', 'sm-10', 'lg-6']).mb-40.mb-lg-0
+        .slider.slider-slim(id="ecommerce-3-slider")
+          each item in ecommerceItems3
+            .slider-item
+              img.image(src="img/img-square.png" alt="").pic-lg
+
+      +col(['12', 'sm-10', 'lg-5'])
+        .mb-40.pb-40.bb
+          .rating-stars.mb-15
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+            i.glyphicon.glyphicon-star
+
+          h1.mb-20 Item One
+          h4.mb-40 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts
+          .colors.mb-60
+            span.bg-accent-dark
+            span.bg-accent
+            span.bg-light
+
+          +row('start', 'center').no-gutters
+            +col('auto').mr-25
+              h2 $399
+            +col('auto').w-90.mr-20
+              +input({ isWhite: true })(type="number" value=1 min=1 max=9)
+              button(data-add="1").more
+              button(data-add="-1").less
+            +col(['12', 'sm-auto']).mt-40.mt-sm-0
+              +button
+
+
+        .ecommerce__item-actions
+          +row('start', 'center').h-40
+            +col(['5']).br
+              a.b-500(href="")
+                span.mr-10 Add to favorites
+                span.glyphicon.glyphicon-star.icon-20
+            +col(['7'])
+              .d-block.d-sm-flex.justify-content-center
+                span.mr-20.b-500 Share
+                +socials({
+                  facebook: true,
+                  twitter: true,
+                  google: true
+                })
+
+    script.
+      $("#ecommerce-3-slider").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'left',
+        contain: false,
+        imagesLoaded: true,
+        wrapAround: true,
+        adaptiveHeight: true,
+        pageDots: false,
+        groupCells: false,
+        prevNextButtons: true
+      });
+
+      $('#ecommerces-3 .more').on('click', function() {
+        $('#ecommerces-3 input')[0].stepUp();
+      });
+
+      $('#ecommerces-3 .less').on('click', function() {
+        $('#ecommerces-3 input')[0].stepDown();
+      });

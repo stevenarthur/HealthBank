@@ -1,0 +1,38 @@
+include ../common/common
+include contents
+
+mixin blog-3()
+  +main-section({ id: 3,  partial: 'blogs' }).p-60.p-lg-100
+    h1.text-center.mb-60 Blog
+
+    +row.slider.group-cells(id="blogs-3-slider")
+      each item in blogItems3
+        +blog-3-item(item)
+
+    script.
+      $("#blogs-3-slider").flickity({
+        cellSelector: '.slider-item',
+        resize: true,
+        cellAlign: 'left',
+        contain: true,
+        imagesLoaded: true,
+        wrapAround: true,
+        adaptiveHeight: true,
+        pageDots: false,
+        groupCells: true,
+        prevNextButtons: true
+      })
+
+
+//- PARTIALS
+mixin blog-3-item({ tag, title, date })
+  +col(['12', 'sm-4']).slider-item
+    .card.ph-15.ph-lg-30.p-30
+      h5.mb-15= tag
+      h2.mb-15= title
+      p.mb-70= date
+      .d-flex.align-items-center
+        img.mr-15(src="img/pics/user-round-50.svg")
+        div
+          div Author name
+          p Position

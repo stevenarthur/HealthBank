@@ -1,0 +1,54 @@
+include ../common/common
+include partials
+
+mixin header-2()
+  +main-section({ id: 2, partial: 'headers', isFluid: true }).bg-light
+    .ph-15.ph-sm-30.ph-lg-70.p-40.mb-30.mb-lg-100
+      +row('center', 'center').justify-content-sm-between
+        +col('auto')
+          +row('center', 'center')
+            +col('auto')
+              +logo
+
+            +col('auto').d-none.d-lg-block
+              nav.navbar
+                a(href="") Menu one
+                a(href="") Menu two
+                a(href="") Menu three
+                .dropdown
+                  a(href="" id="headers-2-dropdown" data-toggle="dropdown") Menu four
+                  .dropdown-menu(aria-labelledby="headers-2-dropdown")
+                    a(href="") Submenu one
+                    a(href="") Submenu two
+                    a(href="") Submenu three
+                    .dropdown-divider
+                    a(href="") Submenu four
+
+        +col('auto').d-none.d-sm-block
+          nav.navbar
+            a(href="") Link
+            +button-small({ isLink: true })
+
+
+    .container
+      +row('center').text-center
+        +col(['12', 'sm-10', 'lg-8'])
+          h1.mb-20 Wireframe connects the underlying conceptual structure
+
+          h4.mb-60.
+            Separated they live in Bookmarksgrove right at
+            the coast of the Semantics, a large language ocean
+
+      form.mb-20
+        +row('center')
+          +col(['12', 'sm-4']).mb-20
+            +input(type="text" placeholder="Input")
+
+          +col(['12', 'sm-4']).mb-20
+            +input({ glyphicon: true })(type="text" placeholder="Input")
+
+          +col(['12', 'sm-4', 'lg-2']).mb-20
+            +button.w-full.no-padding
+
+      +row('center')
+        +col(['12', 'lg-10']).bg-browser

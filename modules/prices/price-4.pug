@@ -1,0 +1,58 @@
+include ../common/common
+include contents
+
+mixin price-4()
+  +main-section({ id: 4, partial: 'prices' }).p-60.p-lg-100
+    +row('center', 'stretch')
+      each item in priceItems4
+        +price-4-item(item)
+
+    .text-center
+      h2.mb-30 $
+        span(id="price-4-summary") 38
+      +button
+
+
+  script.
+    $("#prices-4 input").each(function() {
+      var value = $(this).val();
+      var bar_length = $(this).width() * value / 100;
+
+      $(this).parent().find('.value-bar').width(bar_length);
+    })
+
+    $("#prices-4 input").on('change input', function() {
+      var value = $(this).val();
+      var bar_length = $(this).width() * value / 100;
+
+      $(this).parent().find('.value-bar').width(bar_length);
+      $(this).parent().parent().find('.slider-price').html(value);
+
+      var summary = 0;
+      $("#prices-4 input").each(function () {
+        summary += Number($(this).val());
+      });
+      $('#price-4-summary').text(summary);
+    })
+
+
+//- PARTIALS
+mixin price-4-item({ title, value, labels })
+  +col(['12', 'lg-6']).mb-30
+    .card.p-30.ph-30
+      +row('between').mb-30
+        +col('auto')
+          h3 Storage
+
+        +col('auto')
+          p + $
+            span.slider-price= value
+            span &nbsp;per/month
+
+      .input
+        span.value-bar
+        input(type="range", value=value)
+
+      .d-flex.justify-content-around
+        each label in labels
+          span= label

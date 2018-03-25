@@ -1,0 +1,59 @@
+include ../common/common
+include contents
+
+mixin blog-14()
+  +main-section({ id: 14,  partial: 'blogs', isFluid: true }).pb-60.pb-lg-100
+    .bg-light.p-90.p-sm-130.mb-40
+      .container
+        +row('center').text-center
+          +col(['12', 'sm-8', 'lg-6'])
+            img.mb-40(src="img/pics/pic-100.svg" alt="" width=100)
+
+            h1.mb-60 Wireframe connects the conceptual structure
+            .b-500 by Author One
+
+    .container
+      +row('center')
+        +col(['12', 'sm-10', 'lg-8'])
+          .text-center.text-sm-left
+            h2.mb-15.
+              Far far away, behind the word mountains, far from
+              the countries Vokalia and Consonantia, there live
+              the blind texts.
+
+            h4.mb-30.
+              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+              Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.  Far far away,
+              behind the word mountains. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+              there live the blind texts.
+
+          .features.p-15.mb-40
+            each item, index in blogBadges14
+              +blog-14-badge(item, index)
+
+          +row.mb-80.text-center.text-sm-left
+            +col(['12', 'sm-5']).mb-30.mb-sm-0
+              h2 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+
+            +col(['12', 'sm-7'])
+              h4 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmark-sgrove right at the coast of the Semantics, a large language ocean.  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+
+
+      img.image.mb-60(src="img/img-16-9.png").pic-lg
+
+      +row('center').text-center.text-sm-left
+        +col(['12', 'sm-10', 'lg-8'])
+          h4.
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            Far far away, behind the word mountains.
+
+
+//- PARTIALS
+mixin blog-14-badge({ title, text }, index)
+  .d-flex.p-15
+    .mr-15
+      .badge-round= index + 1
+    div
+      h5.mb-15= title
+      p!= text

@@ -1,0 +1,16 @@
+include ../common/common
+include contents
+
+mixin grid-9()
+  +main-section({ id: 9, partial: 'grids' }).text-center.pb-45.pb-sm-30.pb-lg-70.pt-60.pt-lg-100
+    h1.mb-40 Platforma Wireframe Kit
+
+    +row
+      each item in gridItems9
+        +grid-9-item
+
+
+//- PARTIALS
+mixin grid-9-item()
+  +col(['12', 'sm-4']).mb-15.mb-sm-30
+    img.image(src="img/img-square.png").pic-md

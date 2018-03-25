@@ -1,0 +1,41 @@
+include partials
+
+mixin footer-5()
+  +main-section({ id: 5, partial: 'footers', isFluid: true }).text-center.text-sm-left
+    .p-40.ph-15.ph-sm-30.ph-lg-70
+      +row('center', 'center').justify-content-lg-between
+        +col(['12', 'sm-auto'])
+          +row('center', 'center').justify-content-sm-start
+            +col('auto').country.mb-20.mb-lg-0.mr-sm-30
+              .dropdown
+                a(href="" id="footers-5-dropdown" data-toggle="dropdown")
+                  span.d-flex.align-items-center
+                    span.mr-10
+                      img(src="img/flag.svg" alt="")
+                    span Country
+                .dropdown-menu(aria-labelledby="footers-5-dropdown")
+                  a(href="") Submenu one
+                  a(href="") Submenu two
+                  a(href="") Submenu three
+                  .dropdown-divider
+                  a(href="") Submenu four
+
+            +col(['12', 'sm-auto']).mb-20.mb-lg-0
+              nav.navbar
+                a(href="") Menu One
+                a(href="") Menu Two
+                a(href="") Menu Three
+                a(href="") Menu Four
+
+        +col(['12', 'sm-auto'])
+          +row('center', 'center').justify-content-sm-start
+            +col(['12', 'sm-auto']).mb-20.mb-sm-0
+              p &copy; 2016 Great Simple Studio
+
+            +col('auto')
+              +socials({
+                facebook: true,
+                twitter: true,
+                instagram: true
+              })
+

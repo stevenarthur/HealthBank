@@ -1,0 +1,23 @@
+include ../common/common
+include contents
+
+mixin portfolio-4()
+  +main-section({ id: 4, partial: 'portfolio' }).text-center.pt-60.pt-lg-100.pb-45.pt-sm-30.pb-lg-70
+    +row
+      +col
+        h1.mb-40 Portfolio
+
+    +row
+      each item in portfolio4Items
+        +portfolio-4-item(item)
+
+
+//- PARTIALS
+mixin portfolio-4-item({ title, text })
+  +col(['12', 'sm-6', 'lg-3']).mb-15.mb-sm-30
+    .with-overlay.bg-light.h-400.d-flex.image.pic-sm
+      .with-overlay__content.d-flex
+        +col.align-self-center
+          h3= title
+          p.mb-60!= text
+          a.b-500.arrow(href="#case") View case

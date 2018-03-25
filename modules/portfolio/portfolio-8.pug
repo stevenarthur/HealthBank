@@ -1,0 +1,20 @@
+include ../common/common
+include contents
+
+mixin portfolio-8()
+  +main-section({ id: 8, partial: 'portfolio' }).text-center.text-sm-left.pt-60.pt-lg-100
+    each item, index in portfolioItems8
+      +portfolio-8-item(item, index)
+
+
+//- PARTIALS
+mixin portfolio-8-item({ title, text }, index)
+  +row('between', 'center').mb-60.mb-lg-100
+    +col(['12', 'sm-6'])(class= (index % 2 != 0) ? 'order-sm-2' : null).mb-40.mb-sm-0
+      img.image(src="img/img-square.png").pic-lg
+
+    +col(['12', 'sm-6', 'lg-5'])(class= (index % 2 != 0) ? 'order-sm-1' : null)
+      h1.mb-20= title
+      h4.mb-40= text
+
+      +button

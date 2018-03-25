@@ -1,0 +1,21 @@
+include ../common/common
+include contents
+
+mixin team-2()
+  +main-section({ id: 2, partial: 'teams' }).pt-60.pt-lg-100.pb-20.pb-lg-40.text-center
+    +row
+      +col
+        h1.mb-40.mb-lg-60 Team
+    +row('between')
+      each item, index in teamsPeople2
+        +team-2-person(item)
+        if index == 3
+          +col
+
+
+//- PARTIALS
+mixin team-2-person(name)
+  +col(['6', 'sm-3', 'lg-2']).mb-40.mb-lg-60
+    img.image.mb-20(src="img/img-square.png" alt="").userpic-sm
+    h3= name
+    p Position

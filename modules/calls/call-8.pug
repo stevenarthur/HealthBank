@@ -1,0 +1,18 @@
+include ../common/common
+include contents
+
+mixin call-8()
+  +main-section({ id: 8, partial: 'call-to-actions' }).text-center.pt-60.pt-lg-100.pb-20.pb-lg-60
+    h1.mb-40.mb-lg-80 Call to action
+
+    +row('around')
+      each item in callItems8
+        +call-8-item(item)
+
+
+//- PARTIALS
+mixin call-8-item({ title, text })
+  +col(['12', 'sm-6', 'lg-4']).mb-40
+    img.mb-20(src="img/pics/star-54.svg" alt="")
+    h2.mb-20= title
+    p!= text

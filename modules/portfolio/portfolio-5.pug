@@ -1,0 +1,40 @@
+include ../common/common
+include contents
+
+mixin portfolio-5()
+  +main-section({ id: 5, partial: 'portfolio' }).text-center.p-60.p-lg-100
+    +row
+      +col
+        h1.mb-40 Portfolio
+
+    +row.slider#portfolio-5-slider
+      each item in portfolioItems5
+        +portfolio-5-slider-item(item)
+
+
+    script.
+      $("#portfolio-5-slider").flickity({
+        cellSelector:    ".slider-item",
+        cellAlign:       'left',
+        resize:          true,
+        imagesLoaded:    true,
+        adaptiveHeight:  true,
+        groupCells:      true,
+        prevNextButtons: true,
+        wrapAround:      false,
+        pageDots:        false,
+        contain:         false,
+      })
+
+
+//- PARTIALS
+mixin portfolio-5-slider-item({ title, text })
+  .slider-item
+    +row('center').mb-20
+      +col(['12', 'sm-10'])
+        img.image(src="img/img-16-9.png", alt="").pic-lg
+
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        h3.mb-10= title
+        p!= text

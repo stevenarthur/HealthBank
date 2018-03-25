@@ -1,0 +1,27 @@
+include ../common/common
+include partials
+
+mixin header-12()
+  +main-section({ id: 12, partial: 'headers', isFluid: true }).bg-light.text-center.text-lg-left.pb-60.pb-lg-100
+    .ph-15.ph-sm-30.ph-lg-70.p-40
+      +row('between', 'center')
+        +col('auto')
+          +logo
+
+        +col('auto')
+          nav.navbar.d-none.d-sm-block
+            a(href="") Link
+            +button-small({ isLink: true })
+
+    .container
+      +row('center', 'stretch').justify-content-lg-end
+        +col(['12', 'lg-6']).bg-iphone-left-small
+        +col(['12', 'sm-10', 'lg-6']).p-60
+          img.mb-40(src="img/pics/star-54.svg" alt="")
+          h1.mb-40 Platforma<br> Wireframe Kit
+
+          form
+            +input(type="text" placeholder="Input").mb-20
+            +input(type="text" placeholder="Input").mb-20
+            +input({ glyphicon: true })(type="text" placeholder="Input").mb-20
+            +button.w-full.no-padding

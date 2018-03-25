@@ -1,0 +1,16 @@
+include ../common/common
+
+mixin form-8()
+  +main-section({ id: 8, partial: 'forms' }).text-center.text-sm-left.bg-light.p-60.p-lg-100
+    +row('center', 'center')
+      +col(['12', 'sm-10', 'lg-5']).mb-40.mb-lg-0
+        h2.mb-15 Get Fresh Updates on Email
+        p We'll never share your email address and you can opt out at any time, we promise
+
+      +col(['12', 'sm-10', 'lg-7'])
+        form
+          +row.form-group.no-gutters
+            +col('8')
+              +input({ icon: 'plane-light' })(type="text" placeholder="Input").icon-left
+            +col('4')
+              +button.w-full

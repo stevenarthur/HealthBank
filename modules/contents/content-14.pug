@@ -1,0 +1,26 @@
+include ../common/common
+include contents
+
+mixin content-14()
+  +main-section({ id: 14, partial: 'contents' }).text-center.text-sm-left.p-60.p-lg-100
+    +row('between', 'center')
+      +col(['12', 'sm-6', 'lg-5']).mb-40.mb-lg-0
+        h1.mb-20 Platforma
+        h4.mb-30.
+          Far far away, behind the word mountains, far from the countries Vokalia
+          and Consonantia, there live the blind texts. Separated they live
+          in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+
+        +row
+          each item in contentSubtems14
+            +content-14-subitem(item)
+
+      +col(['12', 'sm-6', 'lg-6'])
+        img.image(src="img/img-square.png", alt="").pic-lg
+
+
+//- PARTIALS
+mixin content-14-subitem({ title, text })
+  +col('6')
+    h3= title
+    p!= text

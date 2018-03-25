@@ -1,0 +1,33 @@
+include ../common/common
+include contents
+
+mixin blog-13()
+  +main-section({ id: 13,  partial: 'blogs' }).pt-60.pt-lg-100.pb-45.pb-sm-30.pb-lg-70
+    h1.text-center.mb-60 Blog
+
+    +row
+      +col(['12', 'lg-6']).mb-15.mb-sm-30.text-center
+        .ratio-1-1
+          .panel.d-flex.p-30.p-sm-0
+            .align-self-center.ph-15.ph-sm-30
+              img.mb-60(src="img/pics/pic-100.svg", alt="", width=100)
+              h2.mb-15 Wireframe connects the underlying structure
+              p.mb-60 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.
+              a.b-500.arrow(href="") Read more
+
+      +col(['12', 'lg-6']).text-center.text-sm-left
+        +row
+          each item in blogItems13
+            +blog-13-item(item)
+
+
+//- PARTIALS
+mixin blog-13-item({ date, title, text })
+  +col(['12', 'sm-6', 'lg-12'])
+    .ratio-1-1.ratio-lg-2-1.mb-15.mb-sm-30
+      .card.d-flex.p-30.p-sm-0
+        .align-self-center.ph-15.ph-sm-30
+          .mb-10= date
+          h2.mb-10= title
+          p.mb-45= text
+          a.b-500.arrow(href="") Read more

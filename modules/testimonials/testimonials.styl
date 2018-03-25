@@ -1,0 +1,68 @@
+.testimonials
+  .slider-fluid
+    .slider-item
+      max-width calc(100% - 30px)
+      opacity 0.3
+      transition 0.5s ease opacity
+
+      +sm()
+        max-width 60%
+
+      +lg()
+        max-width 554px
+
+      &.is-selected
+        opacity 1
+
+      .slider-skeleton
+        color transparent
+        background linear-gradient(to top, Accent, Accent) repeat-x
+        background-size 1px 12px
+        background-position center
+        transition 0.5s ease all
+
+      &.is-selected .slider-skeleton
+        color inherit
+        font-size inherit
+        background-image linear-gradient(to top, transparent, transparent)
+
+
+  .slider-subnav
+  .slider-nav
+    .slider-item
+      opacity 0.3
+
+    .is-selected
+      opacity 1
+
+  .slider-nav
+    background Light
+
+    .flickity-viewport
+      padding-top 8px
+      top: -8px
+
+    .slider-item
+      line-height 140px
+
+    .is-selected
+      &::before
+        content ''
+        position absolute
+        top -8px
+        left 50%
+        margin-left -8px
+        width 0
+        height 0
+        border-style solid
+        border-width 0 8px 8px 8px;
+        border-color transparent transparent Light transparent;
+
+  .rating-stars
+    margin 0 -2px
+
+    .glyphicon
+      margin 0 2px
+
+    .disabled-star
+      color Light

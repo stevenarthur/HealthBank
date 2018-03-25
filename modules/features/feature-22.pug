@@ -1,0 +1,23 @@
+include ../common/common
+include contents
+
+mixin feature-22()
+  +main-section({ id: 22, partial: 'features', isFluid: true }).pt-60.pt-lg-100.pb-20.pb-lg-60.text-center
+    h1.mb-60 Features
+
+    .features-striked-horizontal
+      .container
+        +row
+          each item, index in featureItems22
+            +feature-22-item(item, index)
+
+
+//- PARTIALS
+mixin feature-22-item({ title, text }, index)
+  +col(['12', 'sm-4']).mb-40
+    .mb-30.mb-sm-60
+      img(src="img/pics/check-90.svg" alt="")
+
+    span.mb-40.badge-round= index + 1
+    h3.mb-10= title
+    p!= text

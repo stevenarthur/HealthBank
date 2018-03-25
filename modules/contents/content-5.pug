@@ -1,0 +1,27 @@
+include ../common/common
+include contents
+
+mixin content-5()
+   +main-section({ id: 5, partial: 'contents' }).text-center.p-60.p-lg-100
+    .container
+      +row('center').mb-50
+        +col
+          h5 Simple inegration with world’s most popular file managers:
+
+      +row('center').mb-50
+        +col(['12', 'sm-6', 'lg-4'])
+          +row('between')
+            each item in contentIcons5
+              +content-5-icon
+
+      +row('center')
+        +col(['12', 'sm-10', 'lg-8'])
+          h4.
+            When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown
+            Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane
+
+
+//- PARTIALS
+mixin content-5-icon
+  .col-auto
+    img(src="img/pics/star-54.svg" alt="")

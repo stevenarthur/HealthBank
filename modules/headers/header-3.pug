@@ -1,0 +1,20 @@
+include ../common/common
+include partials
+
+mixin header-3()
+  +main-section({ id: 3, partial: 'headers', isFluid: true }).bg-light
+    .ph-15.ph-sm-30.ph-lg-70.p-40
+      +row('between', 'center')
+        +col('auto')
+          +burger
+
+        +col('auto')
+          +button-small
+
+    .container.pt-30.pt-lg-100.pb-120.pb-lg-180
+      +row('center').text-center
+        +col(['12', 'sm-10'])
+          .mb-50
+            +logo
+          h1.mb-40 Wireframe connects the underlying conceptual structure
+          +button

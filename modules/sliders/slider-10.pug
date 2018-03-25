@@ -1,0 +1,41 @@
+include ../common/common
+include contents
+
+mixin slider-10()
+  +main-section({ id: 10, partial: 'sliders' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-8', 'lg-6'])
+        h1.mb-20 Platforma wireframe
+        h4.mb-60.
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts
+
+    +row(['center'])
+      +col(['12', 'lg-10'])
+        .slider(id="sliders-10-slider")
+          each item in sliderItems10
+            +sliders-10-item()
+
+  +sliders-10-script
+
+
+//- PARTIALS
+mixin sliders-10-item()
+  .slider-item
+    img.w-full(src="img/bg/macbook-full.svg" alt="")
+
+//- SCRIPTS
+mixin sliders-10-script()
+  script.
+    $("#sliders-10-slider").flickity({
+      cellSelector: ".slider-item",
+      resize: true,
+      cellAlign: 'center',
+      contain: true,
+      imagesLoaded: true,
+      wrapAround: false,
+      adaptiveHeight: true,
+      pageDots: false,
+      groupCells: false,
+      prevNextButtons: true
+    })

@@ -1,0 +1,12 @@
+include ../common/common
+
+mixin call-3()
+  +main-section({ id: 3, partial: 'call-to-actions' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        h1.mb-20 Call to action
+        h4.mb-40.
+          "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
+
+        +button.mb-20
+        p Short Caption

@@ -1,0 +1,32 @@
+include ../common/common
+include contents
+
+mixin ecommerce-4()
+  +main-section({ id: 4, partial: 'ecommerces' }).p-60.p-lg-100.text-center
+    h1.mb-40.mb-lg-60 Products
+
+    +row.slider#ecommerces-slider-4
+      each item in ecommerceItems4
+        +ecommerce-4-item(item)
+
+    script.
+      $("#ecommerces-slider-4").flickity({
+        cellSelector:    ".slider-item",
+        resize:          true,
+        cellAlign:       'left',
+        contain:         true,
+        imagesLoaded:    true,
+        wrapAround:      true,
+        adaptiveHeight:  true,
+        pageDots:        true,
+        groupCells:      true,
+        prevNextButtons: true
+      })
+
+
+//- PARTIALS
+mixin ecommerce-4-item({ title, price })
+  +col(['12', 'sm-6']).slider-item
+    img.image.mb-30(src="img/img-square.png" alt="").pic-lg
+    h3= title
+    p= price

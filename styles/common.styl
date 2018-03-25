@@ -1,0 +1,428 @@
+body
+  > .main
+    > section
+      border-bottom 1px solid Accent
+
+a
+  color AccentDark
+  text-decoration none
+
+  &:hover
+    color Accent
+
+    img
+      opacity 0.8
+
+  &.arrow
+    display inline-block
+    padding-right 20px
+
+    &::after
+      content ''
+      position absolute
+      right 2px
+      top 50%
+      margin-top -4px
+      width 8px
+      height 8px
+      transform rotate(-45deg)
+      border-bottom 1px solid #297fca
+      border-right 1px solid #297fca
+
+  &.arrow-top
+    &::after
+      margin-top 0
+      transform rotate(-135deg)
+
+  &.rounded-arrow
+    padding-right 56px
+    display inline-block
+
+.image
+  background Light
+  background-position center
+  background-repeat no-repeat
+  border-radius 4px
+  width 100%
+
+  &.userpic-xl
+    background-image url('../img/pics/user-157.svg')
+    background-size 157px 152px
+
+  &.userpic-lg
+    background-image url('../img/pics/user-112.svg')
+    background-size 112px 109px
+
+  &.userpic-md
+    background-image url('../img/pics/user-112.svg')
+    background-size 87px 85px
+
+  &.userpic-sm
+    background-image url('../img/pics/user-112.svg')
+    background-size 61px 60px
+
+  &.userpic-xs
+    background-image url('../img/pics/user-112.svg')
+    background-size 36px 36px
+
+  &.pic-xl
+    background-image url('../img/pics/pic-202.svg')
+    background-size 202px 140px
+
+  &.pic-lg
+    background-image url('../img/pics/pic-140.svg')
+    background-size 140px 98px
+
+  &.pic-md
+    background-image url('../img/pics/pic-100.svg')
+    background-size 100px 69px
+
+  &.pic-sm
+    background-image url('../img/pics/pic-70.svg')
+    background-size 70px 48px
+
+.video
+.video-sm
+.video-circle
+  position relative
+  cursor pointer
+
+.video
+.video-sm
+.video-circle
+  &::after
+    content ''
+    position absolute
+    transition 0.3 ease all
+    left 0
+    top 0
+    bottom 0
+    right 0
+    margin auto
+
+.video
+  &::after
+    width 57px
+    height 90px
+    background-image url('../img/pics/video.svg')
+    background-size 57px 90px
+
+.video-sm
+  &::after
+    width 42px
+    height 61px
+    background-image url('../img/pics/video-sm.svg')
+    background-size 42px 61px
+
+.video-circle
+  &::after
+    width 150px
+    height 150px
+    background-image url('../img/pics/video-circle.svg')
+    background-size 150px 150px
+
+.video
+.video-sm
+.video-circle
+  &:hover
+    &::after
+      opacity 0.8
+
+.card
+  border 2px solid Light
+  background White
+  border-radius 4px
+  min-height 100%
+
+.panel
+  border-radius 4px
+  background Light
+
+.ratio-1-1
+.ratio-2-1
+.ratio-4-3
+.ratio-sm-1-1
+  position relative
+  min-height calc(100vw - 30px)
+  +sm()
+    min-height 0
+    &::after
+      content ''
+      display block
+
+  > div
+    min-height: calc(100vw - 30px)
+
+  +sm()
+    > div
+      min-height 0
+      position absolute
+      top 0
+      bottom: 0
+      left 0
+      right 0
+
+.ratio-1-1
+  +sm()
+    &::after
+      padding-bottom 100%
+
+.ratio-2-1
+  +sm()
+    &::after
+      padding-bottom 100%
+
+  +sm()
+    &::after
+      padding-bottom calc(50% - 15px)
+
+.ratio-4-3
+  &::after
+    padding-bottom 75%
+
+.ratio-lg-2-1
+  +lg()
+    &::after
+      padding-bottom calc(50% - 15px)
+
+.slider
+  display block
+  margin-left -15px
+  margin-right -15px
+
+  &.no-gutters
+    margin-left 0
+    margin-right 0
+
+  &-item
+    float left
+    width 100%
+
+  &-item
+    padding-left 15px
+    padding-right 15px
+
+
+.with-overlay
+  &__content
+    opacity 0
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    transition 0.3s ease all
+    background Light
+    margin 0
+    border-radius 4px
+
+  &:hover .with-overlay__content
+    opacity 1
+
+.socials,
+.socials-lg
+  font-size 0
+  margin 0 -12px
+  img
+    margin 0 12px
+    vertical-align middle
+
+.socials-lg
+  img
+    margin 0 12px
+
+    +lg()
+      margin 0 24px
+
+.flickity-prev-next-button
+.flickity-prev-next-button:hover
+  width 17px
+  height 32px
+  background none
+  background-size 100%
+  background-position center
+  background-repeat no-repeat
+  padding 0
+  display none
+  +lg()
+    display block
+
+  svg
+    display none
+
+  &.previous
+    background-image url('../img/icons/arrow-left.svg')
+    left -80px
+
+  &.next
+    background-image url('../img/icons/arrow-right.svg')
+    right -80px
+
+.slider-slim
+  .flickity-prev-next-button
+    &.previous
+      left -50px
+
+    &.next
+      right -50px
+
+.slider-rounded-buttons
+  .flickity-prev-next-button
+    border 2px solid Accent
+    margin-top -18px
+    width 35px
+    height 35px
+    background-size 6px 11px
+
+    &.previous
+      background-image url('../img/icons/arrow-xs-left.svg')
+
+    &.next
+      background-image url('../img/icons/arrow-xs-right.svg')
+
+.flickity-page-dots
+  line-height 6px
+  z-index: 1
+  bottom -33px
+  padding 0 7px
+  text-align inherit
+
+  +lg()
+    bottom -53px
+
+  .dot
+    width 6px
+    height 6px
+    transition all .4s ease
+    background Light
+    opacity 1
+    display inline-block
+
+    &::before
+      content ''
+      width 30px
+      height 30px
+      position absolute
+      margin -12px
+
+    &.is-selected
+      transform scale(1.6,1.6)
+      background Accent
+
+.slider-stick-dots
+  .flickity-page-dots
+    bottom -33px
+
+.slider-inner-dots
+  .dot
+    background lighten(Accent, 50%)
+
+  .flickity-page-dots
+    bottom 33px
+
+// Icons
+.icon
+  background-size 100%
+  background-position center
+  background-repeat no-repeat
+  pointer-events none
+  vertical-align middle
+
+  &-resize
+    background-image url('../img/icons/resize.svg')
+    width 12px
+    height 12px
+    position absolute
+    right 8px
+    bottom 8px
+
+  &-plane
+  &-plane-light
+    width 16px
+    height 17px
+    position absolute
+    left 20px
+    top 22px
+
+  &-plane
+    background-image url('../img/icons/paperplane.svg')
+
+  &-plane-light
+    background-image url('../img/icons/paperplane-light.svg')
+
+  &-facebook
+    background-image url('../img/icons/facebook-white.svg')
+    width 10px
+    height 18px
+    display inline-block
+    top -1px
+
+  &-twitter
+    background-image url('../img/icons/twitter-white.svg')
+    width 17px
+    height 14px
+    display inline-block
+    top -2px
+
+  &-pin
+    background-image url('../img/icons/pin.svg')
+    width 11px
+    height 18px
+    display inline-block
+    top -2px
+
+  &-pin-stroke
+    background-image url('../img/icons/pin-stroke.svg')
+    width 11px
+    height 17px
+    display inline-block
+    top -2px
+
+  &-star
+    background-image url('../img/icons/star.svg')
+    width 20px
+    height 20px
+    display inline-block
+    margin-right 10px
+    top -2px
+
+  &-circle-arrow
+    width 36px
+    height 36px
+    line-height 32px
+    border 2px solid Accent
+    border-radius 50%
+    text-align center
+    position absolute
+    right 0
+    top 50%
+    margin-top -18px
+
+    &::after
+      content ''
+      background url('../img/icons/arrow-xs-right.svg') center no-repeat
+      width 6px
+      height 11px
+      display inline-block
+      margin-left 2px
+
+  &-arrow-right
+    display: inline-block;
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    right: 20px;
+    top: 16px;
+    width: 11px;
+    height: 11px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-bottom: 1px solid #297fca;
+    border-right: 1px solid #297fca;
+
+.glyphicon + span
+.icon + span
+    vertical-align middle
+    display inline-block
+    margin-left 10px

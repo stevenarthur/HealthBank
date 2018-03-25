@@ -1,0 +1,25 @@
+include partials
+
+mixin footer-6()
+  +main-section({ id: 6, partial: 'footers' }).text-center
+    .p-40.bb
+      +row('center', 'center')
+        +col(['12', 'lg-3']).text-center.text-lg-left.mb-20.mb-lg-0
+          +logo
+
+        +col(['12', 'lg-6']).mb-20.mb-lg-0
+          nav.navbar
+            a(href="") Menu One
+            a(href="") Menu Two
+            a(href="") Menu Three
+            a(href="") Menu Four
+
+        +col(['12', 'lg-3']).text-center.text-lg-right
+          +socials({
+            facebook: true,
+            twitter: true,
+            instagram: true
+          })
+
+    p.p-40 &copy; 2016 Great Simple All rights reserved
+

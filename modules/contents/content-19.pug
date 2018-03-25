@@ -1,0 +1,45 @@
+include ../common/common
+include contents
+
+mixin content-19()
+  +main-section({ id: 19, partial: 'contents', isFluid: true }).text-center
+    +row('between', 'center').no-gutters
+      +col(['12', 'lg-6']).p-80.p-lg-60
+        .ph-15.ph-sm-100
+          h1.mb-20 Platforma wireframe
+          h4.mb-40.
+            When she reached the first hills of the Italic Mountains, she had
+            a last view back on the skyline of her hometown Bookmarksgrove
+
+          .mb-70
+            +button
+
+          h5.mb-10 Follow us
+          +socials({
+            google: true,
+            facebook: true,
+            twitter: true,
+            instagram: true,
+            behance: true
+          })
+
+      +col(['12', 'lg-6']).bg-light
+        +row.slider.slider-inner-dots.no-gutters#content-18-slider
+          each item in contentPhotos19
+            +content-19-slider-item
+
+  script.
+    $("#content-18-slider").flickity({
+      cellSelector:    ".slider-item",
+      resize:          true,
+      cellAlign:       'center',
+      contain:         true,
+      adaptiveHeight:  true,
+      prevNextButtons: false
+    })
+
+
+//-PARTIALS
+mixin content-19-slider-item()
+  +col.slider-item.image.h-50v.pic-lg
+

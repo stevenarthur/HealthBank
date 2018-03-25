@@ -1,0 +1,29 @@
+include ../common/common
+
+mixin form-7()
+  +main-section({ id: 7, partial: 'forms' }).text-center.p-60.p-lg-100
+    +row('center')
+      +col(['12', 'sm-10', 'lg-8'])
+        h1.mb-20 Sign Up
+        h4.mb-40 Just last week 1 543 companies signed up
+
+        form.mb-30
+          +row
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+            +col(['12', 'sm-6']).mb-20
+              +input({ isLight: true })(type="text" placeholder="Input")
+
+          +row
+            +col(['12', 'sm-6']).mb-20
+              +input({ glyphicon: true, isLight: true })(type="text" placeholder="Input")
+            +col(['12', 'sm-6']).mb-20
+              +input({ glyphicon: true, isLight: true })(type="text" placeholder="Input")
+
+          +button.w-full.no-padding
+
+        p.ph-0.ph-sm-60.
+          By clicking Register me, you indicate that you have read and understand our
+          <a href="">Privacy Policy</a> and <a href="">Terms of Use</a>
+          and represent that you are at least 13 years of age
+

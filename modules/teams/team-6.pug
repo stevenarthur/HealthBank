@@ -1,0 +1,69 @@
+include ../common/common
+include contents
+
+mixin team-6()
+  +main-section({ id: 6, partial: 'teams', isFluid: true }).pt-60.pt-lg-100.text-center.text-sm-left
+    .container
+      +row.slider.mb-60(id="team-slider-6")
+        each item in teamsPeople6
+          +team-6-person(item).slider-item
+
+    .slider-nav
+      .container
+        +row.slider.text-center#team-slider-6-nav
+          each item in teamsPeople6
+            +team-6-person-preview.slider-item
+
+  script.
+    $(document).ready(function(){
+      $("#team-slider-6").flickity({
+        cellSelector:    ".slider-item",
+        resize:          true,
+        cellAlign:       'center',
+        contain:         false,
+        wrapAround:      true,
+        adaptiveHeight:  true,
+        pageDots:        false,
+        groupCells:      false,
+        prevNextButtons: false
+      })
+
+      $("#team-slider-6-nav").flickity({
+        cellSelector:    ".slider-item",
+        resize:          true,
+        contain:         false,
+        cellAlign:       'left',
+        wrapAround:      true,
+        adaptiveHeight:  true,
+        pageDots:        false,
+        groupCells:      false,
+        prevNextButtons: false,
+        asNavFor:        "#team-slider-6",
+      })
+    })
+
+
+//- PARTIALS
+mixin team-6-person(name)
+  +col()&attributes(attributes)
+    +row('between', 'start').align-items-lg-center
+      +col(['12', 'sm-6'])
+        img.mb-40.mb-sm-0.image(src="img/img-square.png" alt="").userpic-xl
+
+      +col(['12', 'sm-6', 'lg-5'])
+        h1.mb-10= name
+        p.mb-20 Position
+        p.mb-30.
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
+          texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small
+          river named Duden flows by their place and supplies it with the necessary regelialia.
+        +socials({
+          twitter: true,
+          instagram: true,
+          behance: true
+        })
+
+mixin team-6-person-preview()
+  +col(['6', 'sm-3', 'lg-2'])&attributes(attributes)
+    img(src="img/pics/user-87.svg" alt="")
+

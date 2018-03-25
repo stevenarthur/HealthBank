@@ -1,0 +1,21 @@
+include ../common/common
+include contents
+
+mixin blog-6()
+  +main-section({ id: 6,  partial: 'blogs' }).text-center.pt-60.pt-lg-100.pb-45.pb-sm-60.pb-lg-100
+    h1.mb-60 Latest posts
+
+    +row.text-center.text-sm-left
+      each item in blogItems6
+        +blog-6-item(item)
+
+
+//- PARTIALS
+mixin blog-6-item({ title, text })
+  +col(['12', 'sm-4']).mb-15.mb-sm-30
+    .card
+      img.image(src="img/img-4-3.png" alt="").pic-sm
+      .ph-15.ph-lg-30.p-30
+        h3.mb-10= title
+        p.mb-50!= text
+        a.b-500.arrow(href="") Read more

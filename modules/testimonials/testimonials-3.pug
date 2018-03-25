@@ -1,0 +1,15 @@
+include ../common/common
+include contents
+
+mixin testimonials-3()
+  +main-section({ id: 3, partial: 'testimonials' }).text-center.p-60.p-lg-100.pb-40.pb-lg-80
+    h5.mb-30 And thousands of happy companies, including:
+
+    +row('center', 'center')
+      each item in testimonialsItems3
+        +testimonials-3-item(item)
+
+//- PARTIALS
+mixin testimonials-3-item(path)
+  +col(['6', 'sm-3', 'lg-2']).mb-20
+    img(src=`img/logos/${path}`)

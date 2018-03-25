@@ -1,0 +1,28 @@
+include ../common/common
+
+mixin contacts-1()
+  +main-section({ id: 1, partial: 'contacts' }).p-60.p-lg-100
+    .text-center
+      h1.mb-60 Contact us
+
+    +row.text-center.text-sm-left
+      +col(['12', 'sm-6']).mb-40.mb-sm-0
+        form
+          +input({ isLight: true })(type="text" placeholder="Input").mb-20
+          +input({ isLight: true })(type="text" placeholder="Input").mb-20
+          +textarea({ isLight: true })(rows="9").mb-20
+          +button-small
+
+      +col(['12', 'sm-6']).d-flex.flex-column
+        .bg-map-right
+          img(src="img/icons/pin.svg").pin
+        .pt-30
+          h5.mb-15 Where to find us
+          +row
+            +col(['12', 'sm-6']).mb-20.mb-sm-0
+              p
+                a(href="mailto:") hello@greatsimple.io
+              p +1 222-345-0000
+            +col(['12', 'sm-6'])
+              p Saint-Petersburg,
+              p 191186 Millionnaya st. 29

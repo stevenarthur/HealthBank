@@ -1,0 +1,18 @@
+include ../common/common
+include partials
+
+mixin header-18()
+  +main-section({ id: 18, partial: 'headers', isFluid: true })
+    .ph-15.ph-sm-30.ph-lg-70
+      +row('between', 'center').h-100
+        +col(['3', 'sm-4'])
+          +burger
+
+        +col(['6', 'sm-4']).text-center
+          +logo
+
+        +col(['3', 'sm-4']).text-right
+          a(href="")
+            span.d-none.d-sm-inline Cart
+            .badge-dark 1
+

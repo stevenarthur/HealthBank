@@ -1,0 +1,35 @@
+include ../common/common
+include contents
+
+mixin slider-6()
+  +main-section({ id: 6, partial: 'sliders' }).text-center.p-60.p-lg-100
+    .slider(id="sliders-6-slider")
+      each item in sliderItems6
+        +sliders-6-item(item)
+
+  script.
+    $("#sliders-6-slider").flickity({
+      cellSelector:    ".slider-item",
+      cellAlign:       'center',
+      resize:          true,
+      wrapAround:      true,
+      imagesLoaded:    true,
+      adaptiveHeight:  true,
+      pageDots:        true,
+      contain:         false,
+      groupCells:      false,
+      prevNextButtons: false
+    })
+
+
+//- PARTIALS
+mixin sliders-6-item({ title, text })
+  .slider-item
+    +row('between', 'center').text-center.text-sm-left
+      +col(['12', 'sm-6']).mb-20.mb-sm-0
+        img.image(src="img/img-4-3.png" alt="").pic-md
+
+      +col(['12', 'sm-6', 'lg-5'])
+        h2.mb-20= title
+        p.mb-40!= text
+        +button-small

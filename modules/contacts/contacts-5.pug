@@ -1,0 +1,28 @@
+include ../common/common
+
+mixin contacts-5()
+  +main-section({ id: 5, partial: 'contacts' }).text-center.p-60.p-lg-100
+    h1.mb-60 Contacts
+
+    +row.text-center.text-sm-left
+      +col(['12', 'sm-6']).mb-40.mb-sm-0
+        +input({ isLight: true })(type="text" placeholder="Input").mb-20
+        +textarea({ isLight: true })(rows="4").mb-20
+        +button-small
+
+      +col(['12', 'sm-6'])
+        h5.mb-15 Platforma wireframe kit
+        .mb-30
+          p
+            a(href="mailto:") hello@greatsimple.io
+          p +1 222-345-0000
+
+        h5.mb-15 Follow us
+        +socials({
+          google: true,
+          facebook: true,
+          twitter: true,
+          instagram: true,
+          behance: true
+        })
+

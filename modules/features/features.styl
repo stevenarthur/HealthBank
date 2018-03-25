@@ -1,0 +1,281 @@
+.features
+  &.bg-iphone-left
+  &.bg-iphone-center
+  &.bg-iphone-right
+  &.bg-iphone-right-top
+  &.bg-macbook-left
+    background-repeat no-repeat
+
+    +sm()
+      background-image url('../img/bg/iphone-lg.svg')
+      background-size 280px 568px
+
+    +lg()
+      background-size 420px 853px
+
+  &.bg-iphone-left
+    +sm()
+      background-position calc(33% - 140px) 50%
+
+    +lg()
+      background-position calc(50% - 290px) 100px
+
+  &.bg-iphone-center
+    +sm()
+      background-image none
+    +lg()
+      background-image url('../img/bg/iphone-lg.svg')
+      background-position 50% 260px
+
+  &.bg-iphone-right
+    +sm()
+      background-position calc(50% + 170px) 140px
+
+    +lg()
+      background-position calc(50% + 290px) 220px
+
+  &.bg-iphone-right-top
+    +sm()
+      background-position calc(50% + 170px) 60px
+
+    +lg()
+      background-position calc(50% + 290px) 100px
+
+  &.bg-macbook-left
+    +sm()
+      background-image url('../img/bg/macbook-full.svg')
+      background-size 594px 342px
+      background-position calc(50% - 372px) center
+
+    +lg()
+      background-image url('../img/bg/macbook-full.svg')
+      background-size 890px 514px
+      background-position calc(50% - 475px) 268px
+
+  .bg-macbook-center
+    background-size 121% auto
+    background-position center top
+    background-image url('../img/bg/macbook-full.svg')
+
+    &::after
+      content ''
+      display block
+      padding-top 40%
+
+  .feature-tooltips
+    display inline-block
+    position relative
+
+  .icon-feature
+    border 2px solid Light
+    position absolute
+    height 32px
+    width 32px
+    border-radius 50%
+    transition 0.3s ease border
+    cursor pointer
+    margin -16px 0 0 -16px
+    background url('../img/icons/plus.svg') center no-repeat #ffffff
+
+    &:hover
+      border-color Accent
+
+  .feature-tooltip
+    width 100%
+    top 50%
+    visibility hidden
+    opacity 0
+    position absolute
+    margin-top -16px
+
+    +lg()
+      &
+        width 0
+        height 32px
+
+      &.tooltip-1
+        left 10%
+        top 16%
+
+      &.tooltip-2
+        left 91%
+        top 32%
+
+      &.tooltip-3
+        left 19%
+        top 75%
+
+      &.tooltip-4
+        left 76%
+        top 93%
+
+    &-overlay
+      position absolute
+      height 300px
+      top -134px
+      width 100%
+      display flex
+      flex-direction column
+      justify-content center
+      transition 0.5s ease opacity
+
+      +sm()
+        width 315px
+        left 50%
+        margin-left -162px
+
+      +lg()
+        left 50px
+        margin-left 0
+
+
+  .icon-feature:hover + .feature-tooltip
+    visibility visible
+    opacity 1
+    z-index 3
+
+  .feature-tooltip-overlay
+    pointer-events none
+
+    .inner
+      border: 2px solid Light
+      width: 100%
+      border-radius: 4px
+      background: #ffffff
+      padding 30px
+      +lg()
+        &::after
+        &::before
+          content ''
+          border 10px solid
+          border-width 10px 10px 10px 0
+          border-color transparent
+          position absolute
+          left -10px
+          width 0
+          height 0
+          top 50%
+          margin-top -10px
+
+        &::before
+          border-right-color Light
+
+        &::after
+          border-right-color #ffffff
+          margin-left 3px
+
+  .percentage
+    width 230px
+    height 230px
+    &__circle
+      position absolute
+
+    &__content
+      height 230px
+
+  .striked-vertical
+    &::before
+      content ''
+      position absolute
+      border-left 2px solid Light
+      left 31px
+      top 15px
+      bottom 0
+
+
+  .feature-callout
+    +lg()
+      &::before
+      &::after
+        content ''
+        position absolute
+
+    &::before
+      width 10px
+      height 10px
+      background Accent
+      border-radius 5px
+      top 22px
+
+    &::after
+      border-top 2px solid Accent
+      top 26px
+      right 100%
+
+    &:nth-child(1)
+      &::after
+      &::before
+        left -75%
+
+    &:nth-child(2)
+      &::after
+      &::before
+        left -65%
+
+    &:nth-child(3)
+      &::after
+      &::before
+        left -103%
+
+  .plain-tabs
+  .plain-tab
+    &::before
+      content ''
+      position absolute
+      border-left 4px solid Light
+      left 0
+      top 0
+      bottom 0
+      +sm()
+        bottom auto
+        right 15px
+        left 15px
+        border-left none
+        border-top 4px solid Light
+
+  .plain-tab
+    padding-left 26px
+    padding-top 15px
+    padding-bottom 15px
+    +sm()
+      padding 30px 15px 0
+
+  .plain-tab.active
+    &::before
+      border-left 4px solid Accent
+      +sm()
+        border-left none
+        border-top 4px solid Accent
+
+  .feature-dots
+    +sm()
+      &::before
+        top 61px
+        content ''
+        position absolute
+        border-bottom 1px solid Light
+        left 0
+        right 0
+
+  .feature-dot
+    width 10px
+    height 10px
+    background Light
+    border-radius 5px
+    margin 0 auto 20px
+
+  .active .feature-dot
+    background Accent
+
+  .features-striked-horizontal
+    +sm()
+      &::before
+        top 165px
+        content ''
+        position absolute
+        border-bottom 2px solid Light
+        left 0
+        right 0
+
+  .feature-tablet
+    max-width 100%

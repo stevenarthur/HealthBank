@@ -1,0 +1,42 @@
+include ../common/common
+include contents
+
+mixin testimonials-2()
+  +main-section({ id: 2, partial: 'testimonials' }).text-center.p-60.p-lg-100
+    h1.mb-60 Testimonials
+
+    +row.slider.mb-50(id="testimonials-2-slider")
+      each item in testimonialsItems2
+        +testimonials-2-item(item)
+
+    +row('center')
+      +col(['12', 'sm-12', 'lg-8'])
+        +row.slider.slider-subnav(id="testimonials-2-nav")
+          each item in testimonialsItems2
+            +testimonials-2-nav-item(item)
+
+
+    script.
+      $('#testimonials-2-slider').flickity({
+        pageDots: false
+      })
+
+      $('#testimonials-2-nav').flickity({
+        asNavFor: '#testimonials-2-slider',
+        pageDots: false,
+        prevNextButtons: false,
+        cellAlign: 'left',
+        contain: true,
+      })
+
+//- PARTIALS
+mixin testimonials-2-item({ text })
+  +col('12').slider-item
+    +row('center')
+      +col(['12', 'sm-8', 'lg-6'])
+        h4!= text
+
+mixin testimonials-2-nav-item({ name })
+  +col(['6', 'sm-3']).slider-item
+    img.mb-20(src="img/pics/user-round-50.svg", alt="")
+    h3= name

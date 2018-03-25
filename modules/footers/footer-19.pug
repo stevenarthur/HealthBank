@@ -1,0 +1,30 @@
+include partials
+
+mixin footer-19()
+  +main-section({ id: 19, partial: 'footers' }).text-center
+    +row('center', 'stretch').no-gutters.splited-columns
+      +col(['12', 'sm-4']).p-30.p-lg-60
+        .pr-sm-30
+          h5.mb-20 Contact us
+          p Saint-Petersburg,
+          p 191196, Millionnaya st. 29
+
+      +col(['12', 'sm-4']).p-30.p-lg-60
+        h5.mb-20 Follow us
+        +socials({
+          google: true,
+          facebook: true,
+          twitter: true,
+          instagram: true,
+          behance: true
+        })
+
+      +col(['12', 'sm-4']).p-30.p-lg-60
+        .pl-sm-30
+          h5.mb-20 Get product updates
+          form
+            +row.no-gutters.form-group
+              +col('8')
+                +input({ isLight: true, isSmall: true })(type="text" placeholder="Input")
+              +col('4')
+                +button-small.w-full

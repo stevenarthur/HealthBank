@@ -1,0 +1,40 @@
+{
+  "name": "platforma-html",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "browser-sync start --ss ./build -f *.html",
+    "gulp": "gulp",
+    "watch": "gulp watch",
+    "build": "run-s gulp watch",
+    "production": "NODE_ENV=production gulp",
+    "start": "run-p build server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatsimple/platforma-html.git"
+  },
+  "author": "GreatSimple",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greatsimple/platforma-html/issues"
+  },
+  "homepage": "https://github.com/greatsimple/platforma-html#readme",
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.18.12",
+    "cheerio": "^1.0.0-rc.2",
+    "csso": "^3.1.1",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-beautify": "0.0.1",
+    "gulp-stylus": "^2.6.0",
+    "html-beautify": "^1.0.4",
+    "npm-run-all": "^4.0.2",
+    "plumber": "^0.4.8",
+    "postcss-csso": "^2.0.0"
+  }
+}

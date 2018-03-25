@@ -1,0 +1,38 @@
+include ../common/common
+include contents
+
+mixin slider-7()
+  +main-section({ id: 7, partial: 'sliders', isFluid: true }).text-center.p-60.p-lg-100
+    .slider.slider-fluid(id="sliders-7-slider")
+      each item in sliderItems7
+        +sliders-7-item(item)
+
+  +sliders-7-script
+
+
+//- PARTIALS
+mixin sliders-7-item({ text })
+  .slider-item
+    .panel.pt-150.pt-lg-190.pb-80.pb-lg-120.ph-15.ph-sm-60.ph-lg-100
+      img.mb-60(src="img/pics/pic-202.svg", alt="", width=202)
+      h4!= text
+
+//- SCRIPTS
+mixin sliders-7-script()
+  script.
+    var slidersSlider7 = $("#sliders-7-slider").flickity({
+      cellSelector: ".slider-item",
+      resize: true,
+      cellAlign: 'center',
+      contain: false,
+      imagesLoaded: true,
+      wrapAround: true,
+      adaptiveHeight: true,
+      pageDots: true,
+      groupCells: false,
+      prevNextButtons: false
+    })
+
+    slidersSlider7.find('.slider-item').on('click', function() {
+      slidersSlider7.flickity('select', $(this).index());
+    });

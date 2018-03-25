@@ -1,0 +1,19 @@
+include ../common/common
+include contents
+
+mixin feature-20()
+  +main-section({ id: 20, partial: 'features' }).pt-60.pt-lg-100.pb-20.pb-lg-80.text-center
+    h1.mb-60 Platforma wireframe
+
+    +row
+      each item in featureItems20
+        +feature-20-item(item)
+
+//- PARTIALS
+mixin feature-20-item({ number, text })
+  +col(['12', 'sm-4']).mb-40
+    h2.mb-15= number
+    p!= text
+
+
+

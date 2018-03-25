@@ -1,0 +1,54 @@
+include ../common/common
+include contents
+
+mixin testimonials-6()
+  +main-section({ id: 6, partial: 'testimonials', isFluid: true }).p-60.p-lg-100
+    .container
+      .slider.mb-80(id="testimonials-6-slider")
+        for item in testimonialsItems6
+          +testimonials-6-item(item)
+
+
+    .slider-nav
+      .container
+        +row.slider.text-center(id="testimonials-6-nav")
+          for item in testimonialsItems6
+            +testimonials-6-picture(item)
+
+
+    script.
+      $('#testimonials-6-slider').flickity({
+        pageDots: false,
+        cellSelector: '.slider-item'
+      })
+
+      $('#testimonials-6-nav').flickity({
+        asNavFor: '#testimonials-6-slider',
+        pageDots: false,
+        prevNextButtons: false,
+        cellAlign: 'left',
+        contain: true
+      })
+
+
+//- PARTIALS
+mixin testimonials-6-item({ name, text })
+  .slider-item
+    +row('between', 'center')
+      +col(['12', 'sm-6'])
+        img.mb-30.mb-sm-0.image(src="img/img-square.png" alt="").userpic-lg
+
+      +col(['12', 'sm-6', 'lg-5'])
+          h4.mb-40!= text
+
+          .d-flex
+            .mr-20
+              img(src="img/pics/user-round-50.svg" alt="")
+
+            div
+              h3= name
+              p Position
+
+mixin testimonials-6-picture({ path })
+  +col(['6', 'sm-3', 'lg-2']).slider-item
+    img(src=`img/logos/${path}`)

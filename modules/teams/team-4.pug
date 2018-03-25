@@ -1,0 +1,30 @@
+include ../common/common
+include contents
+
+mixin team-4()
+  +main-section({ id: 4, partial: 'teams' }).pt-60.pt-lg-100.pb-20.pb-lg-60.text-center
+    +row
+      +col
+        h1.mb-40.mb-lg-60 Team
+
+    +row
+      each item, index in teamsPeople4
+        +team-4-person(item)
+        if index == 3
+          +col
+
+      +col(['6', 'sm-3']).mb-40.mb-lg-60
+        a.b-500(href="")
+          img.w-90.mb-20(src="img/icons/teams-join.svg")
+          br
+          |Join the team
+
+
+//- PARTIALS
+mixin team-4-person(name)
+  +col(['6', 'sm-3']).mb-40.mb-lg-60
+    img.mb-20(src="img/pics/user-round-90.svg" alt="")
+    h3= name
+    p Position
+
+

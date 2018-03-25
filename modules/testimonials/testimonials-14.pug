@@ -1,0 +1,35 @@
+include ../common/common
+include contents
+
+mixin testimonials-14()
+  +main-section({ id: 14, partial: 'testimonials' }).text-center.p-60.p-lg-100
+    h1.mb-60 Testimonials
+
+    +row.text-left.mb-30
+      each item in testimonialsItems14
+        +testimonials-14-item(item)
+
+    +button({ glyphicon: 'star' })
+
+
+//- PARTIALS
+mixin testimonials-14-item({ name, text })
+  +col(['12', 'sm-4']).mb-15.mb-sm-30
+    .card
+      .d-flex.justify-content-between.align-items-center.bb.p-20.ph-30
+        div
+          h5= name
+          p Position
+        div
+          img(src="img/pics/user-round-50.svg")
+
+      .p-30.ph-30
+        p.mb-50!= text
+
+        .rating-stars
+          i.glyphicon.glyphicon-star
+          i.glyphicon.glyphicon-star
+          i.glyphicon.glyphicon-star
+          i.glyphicon.glyphicon-star
+          i.glyphicon.glyphicon-star.disabled-star
+

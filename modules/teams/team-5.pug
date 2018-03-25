@@ -1,0 +1,23 @@
+include ../common/common
+include contents
+
+mixin team-5()
+  +main-section({ id: 5, partial: 'teams' }).pt-60.pt-lg-100.pb-20.pb-lg-60
+    +row.text-center
+      +col
+        h1.mb-40.mb-lg-60 Team
+
+    +row
+      each item, index in teamsPeople5
+        +team-5-person(item)
+
+
+//- PARTIALS
+mixin team-5-person(name)
+  +col(['12', 'sm-6', 'lg-4']).mb-40.mb-lg-60
+    +row('start', 'center').flex-nowrap
+      +col('auto')
+        img(src="img/pics/user-round-90.svg" alt="")
+      +col('auto')
+        h3= name
+        p Position

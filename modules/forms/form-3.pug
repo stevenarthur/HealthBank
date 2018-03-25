@@ -1,0 +1,17 @@
+include ../common/common
+
+mixin form-3()
+  +main-section({ id: 3, partial: 'forms' }).text-center.p-60.p-lg-100
+    +row
+      +col
+        h1.mb-40 Sign up by phone
+
+    +row('center')
+      +col(['12', 'sm-8', 'lg-5'])
+        form
+          +row.form-group.no-gutters
+            +col('8')
+              +input({ isLight: true })(type="text" placeholder="Input")
+            +col('4')
+              +button.w-full
+

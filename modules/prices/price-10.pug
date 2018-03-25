@@ -1,0 +1,21 @@
+include ../common/common
+include contents
+
+mixin price-10()
+  +main-section({ id: '10', partial: 'prices' }).text-center.p-60.p-lg-100
+    h1.mb-60 Pricing table
+
+    +row
+      each item in priceItems10
+        +price-10-item(item)
+
+
+//- PARTIALS
+mixin price-10-item({ title, price })
+  +col(['12', 'sm-4'])
+    .p-30.ph-30
+      h3.mb-30= title
+      img.mb-30(src="img/pics/star-54.svg" width="82" alt="")
+      h3.mb-10= `$${price} per month`
+      h4.mb-30 Far far away
+      +button-small.w-full

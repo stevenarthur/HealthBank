@@ -1,0 +1,14 @@
+include ../common/common
+
+mixin form-1()
+  +main-section({ id: 1, partial: 'forms' }).bg-light.bg-macbook.text-center.text-sm-left.p-60.p-sm-140.p-lg-180
+    +row
+      +col(['12', 'sm-7', 'lg-5'])
+        h1.mb-20 Sign Up
+        h4.mb-40 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts
+
+        form
+          +input(type="text" placeholder="Input").mb-20
+          +input({ glyphicon: true })(type="text" placeholder="Input with icon").mb-20
+          +button
+
